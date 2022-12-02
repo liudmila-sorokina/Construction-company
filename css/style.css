@@ -1,0 +1,863 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* 
+1.Обернуть header и все следующие элементы в единый контейнер. DONE
+2. Задать единому контейнеру фиксированную ширину DONE
+3. Если что-то разъедется, то задать родительскому контейнеру ширину 100% DONE
+4. Внутри .our-reputation переделать все на flex, если это возможно DONE
+5. Если это нужно, убрать height внутри .our-reputation__item DONE
+5.5 Пройтись по коду и убрать height там где он не нужен DONE
+6. переделать дивы внутри .our-reputation на список DONE
+7. Обнулить стили ul DONE */
+main {
+    width: 1440px;
+}
+
+ul {
+    padding-left: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.header {
+    width: 1440px;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Work Sans', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.header__logo {
+    margin-left: 102px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 35.19px;
+    color: #2947A9;
+}
+
+.header__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+}
+
+.header__name-the {
+    font-style: italic;
+}
+
+.header__logo-img {
+    width: 38px;
+    margin-right: 14px;
+}
+
+.header__list-item {
+    margin-right: 50px;
+    font-size: 18px;
+    line-height: 21px;
+    color: #14171F;
+}
+
+.header__list-item:last-child {
+    margin-right: 118px;
+}
+
+.header__link {
+    text-decoration: none;
+    color: #14171F;
+}
+
+.header__link:hover,
+.header__link:active {
+    color: #F9995D;
+}
+
+.projects {
+    width: 1440px;
+    height: 646px;
+    display: flex;
+    justify-content: space-between;
+    background-image: url("../Hero.jpg");
+    background-repeat: no-repeat;
+    font-family: 'Work Sans', sans-serif;
+    color: #FFFFFF;
+}
+
+/* 2 раза DONE*/
+
+.projects__carousel {
+    width: 416px;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    background-color: #3559C7;
+    font-weight: 400;
+}
+
+.projects__building-name {
+    text-align: center;
+    height: 156px;
+}
+
+/* вынести в родителей все фонт фемили
+фонт сайзы лайн хейты фонт вейты DONE*/
+.projects__button {
+    /* убрать текст алиген DONE
+    отцентровать флексами DONE*/
+    width: 208px;
+    height: 40px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+    background-color: #292E3D;
+}
+
+.projects__button:last-child {
+    border-left: 2px solid #FFFFFF;
+}
+
+.projects__buttons {
+    display: flex;
+}
+
+.projects__tittle {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+}
+
+.projects__information {
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.projects__slogan {
+    /*  все что отвечает за размеры - вверьх DONE*/
+    margin-left: 112px;
+    width: 556px;
+    align-self: center;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 72px;
+    line-height: 84px;
+    color: #292E3D;
+
+}
+
+.projects__arrow {
+    margin: 5px;
+}
+
+.projects__button:hover {
+    background-color: green;
+}
+
+.our-reputation {
+    font-family: 'Work Sans', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.our-reputation__title {
+    text-align: center;
+    color: #292E3D;
+    font-size: 36px;
+    line-height: 42px;
+}
+
+.our-reputation__about {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-evenly;
+    padding: 0 135px;
+}
+
+.our-reputation__item {
+    width: 255px;
+    border: 1.4px solid #E0E3EB;
+    border-radius: 4px;
+    margin-top: 25px;
+    padding: 20px;
+}
+
+.our-reputation__subtitle {
+    margin-top: 10px;
+    font-size: 20px;
+    line-height: 23px;
+    color: #3D445C;
+}
+
+.our-reputation__description {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #858EAD;
+}
+
+.about-us__information {
+    text-align: left;
+    padding: 33px 40px 60px;
+    width: 486px;
+    background-color: #2947A9;
+    font-family: 'Work Sans', sans-serif;
+    color: #FFFFFF;
+    font-style: normal;
+    box-sizing: border-box;
+}
+
+.about-us__title {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 42px;
+}
+
+.about-us__description {
+    width: 370px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+}
+
+.about-us__button {
+    width: 219px;
+    height: 53px;
+    margin-top: 55px;
+    border: 2px solid #2947A9;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+    color: #2947A9;
+}
+
+.about-us {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 150px;
+    margin-bottom: 225px;
+}
+
+.about-us__photo {
+    margin-right: -190px;
+    margin-bottom: -55px;
+}
+
+/* 1.  Нужно почитать про box-sizing: border-box; и рассказать максимушке
+2. У .about-us__information сделать круговой паддинг DONE
+3. Уменьшить width после того как верстка поедет DONE
+4. Постараться обойтись без height DONE
+5. Внутри about-us__information помениять background на background-color DONE
+6. Поставить alt в img DONE
+*/
+.services {
+    display: grid;
+    justify-content: center;
+    background-color: #F6F8F7;
+    font-family: 'Work Sans', sans-serif;
+    font-style: normal;
+}
+
+.services__title {
+    margin-bottom: 22px;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    justify-self: center;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 42px;
+    color: #292E3D;
+}
+
+.services__list {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    list-style-type: none;
+    display: grid;
+    gap: 48px 98px;
+}
+
+.services__item-1 {
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+.services__item-2 {
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+.services__item-3 {
+    grid-column: 3/4;
+    grid-row: 1/2;
+}
+
+.services__item {
+    width: 271px;
+    height: 181px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-areas:
+        ". picture1 ."
+        ". strip ."
+        ". title .";
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 23px;
+    align-items: center;
+    background-color: #FFFFFF;
+    color: #2947A9;
+}
+
+
+.services__item--blue-background--white-letters {
+    background-color: #2947A9;
+    color: #FFFFFF;
+}
+
+.services__strip {
+    margin-top: 15px;
+    width: 60px;
+    border-bottom: 2px solid #E0E3EB;
+    grid-area: strip;
+    justify-self: center;
+}
+
+.services__details {
+    margin-bottom: 36px;
+    grid-area: title;
+    justify-self: center;
+}
+
+.services__img {
+    grid-area: picture1;
+    justify-self: center;
+    margin-top: 29px;
+}
+
+
+/* 1. .services__strip border-bottom instead of height&background-color DONE*/
+/* 2. Join modifiers services__item_blue-background and services__item_white-letters into one class DONE*/
+/* 3. modifier separator should be  -- instead of _ DONE */
+/* 4. There should be only one modifier instead of two DONE*/
+/* 5. To prevent next occurence of ul's padding-left, lets make ul { padding-left: 0} a global style DONE */
+/* Clear the clutter DONE */
+
+.years-experience {
+    font-family: 'Work Sans', sans-serif;
+    font-style: normal;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+.years-experience__list {
+    
+    list-style-type: none;
+}
+.years-experience__number {
+    margin-top: 20px;
+    margin-left: 30px;
+    font-weight: 600;
+    font-size: 72px;
+    line-height: 84px;
+    color: #292E3D;
+}
+.years-experience__description {
+    padding-left: 12px;
+    margin-top: 0;
+    margin-left: 46px;
+    border-left: 7px solid #F9995D;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    color: #667299;
+}
+.years-experience__title {
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 70px;
+    color: #2947A9;
+}
+.years-experience__about {
+    width: 330px;
+    margin-top: 40px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    color: #525B7A;
+}
+.about-us__button--blue-button {
+    width: 176px;
+    margin-top: 20px;
+    background-color: #2947A9;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+}
+
+.years-experience__item {
+    height: 155px;
+    border: 1px solid #FFFFFF;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px -2px #111827;
+    background-color: #FFFFFF;
+}
+.years-experience__item1 {
+     width: 280px;
+     margin-top: 122px;
+     margin-left: 512px;
+     position: relative;
+     z-index: 1;
+}
+.years-experience__item2 {
+    width: 361px;
+    margin-top: -55px;
+    margin-left: 212px;
+    position: relative;
+}
+.years-experience__item3 {
+    width: 276px;
+    margin-top: -10px;
+    margin-left: 458px;
+    position: relative;
+    z-index: 1;
+}
+.years-experience__item4 {
+    width: 333px;
+    margin-top: -55px;
+    margin-left: 261px;
+    position: relative;
+}
+
+.years-experience__picture-hands {
+   position: absolute;
+   top: -19px;
+   right: -28px;
+}
+.years-experience__notes {
+    position: absolute;
+    top: -49px;
+    left: -33px;
+}
+.years-experience__cup {
+   position: absolute;
+   top: -15px;
+   right: -21px;
+}
+.years-experience__diagram {
+    position: absolute;
+    bottom: -42px;
+    right: -39px;
+}
+.years-experience__information {
+    margin-top: 150px;
+    margin-left: -10px;
+}
+
+.free-consultation {
+    height: 300px;
+    background-image: url(../kitchen.png);
+    margin-top: 60px;
+    padding-right: 65px;
+    padding-left: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: 'Work Sans', sans-serif;
+    font-style: normal;
+    color: #FFFFFF;
+} 
+.free-consultation__title {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 42px;
+}
+.free-consultation__contact {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+}
+.free-consultation__telephone {
+    color: inherit;
+    margin-left: 10px;
+}
+.free-consultation__button {
+    width: 232px;
+    height: 53px;
+    border: 2px solid #FFFFFF;
+    border-radius: 4px;
+    background-color: transparent;
+    color: inherit;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+}
+.our-projects {
+    display: flex;
+    width: 100%;
+    margin-top: 112px;
+    justify-content: space-around;
+    font-family: 'Work Sans', sans-serif;
+    font-style: normal;
+}
+.our-projects__title {
+    margin-bottom: 40px;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 42px; 
+    color: #292E3D;
+}
+.our-projects__sidebar {
+    list-style: none;
+}
+.our-projects__item {
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+}
+.our-projects__item:last-child {
+    margin-bottom: 0;
+}
+.our-projects__link:hover {
+    color: #111827;
+}
+.our-projects__link:active {
+    color: #F9995D;
+}
+.our-projects__link:focus {
+    color: #2947A9;
+    border-left: 5px solid #2947A9;
+}
+.our-projects__photo {
+    margin: 0;
+    margin-bottom: 30px;
+}
+
+.our-projects__examples {
+    display: flex;
+    width: 55%;
+    flex-direction: column;
+    padding-top: 115px;
+}
+.our-projects__photos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.our-projects__buttons {
+    display: flex;
+    margin-top: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+.our-projects__description {
+    padding-top: 12px;
+    padding-bottom: 16px;
+    padding-left: 12px;
+    color: #FFFFFF;
+    background-color: #2947A9;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+}
+.our-projects__name {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+}
+.our-projects__img {
+    margin-bottom: -5px;
+}
+.our-projects__link {
+    text-decoration: none;
+    color: #C2C7D6;
+    padding-left: 16px;
+}
+.our-projects__link--active {
+    color: #2947A9;
+    border-left: 5px solid #2947A9;
+}
+.our-projects__circle {
+    width: 16px;
+    height: 16px;
+    margin-left: 5px;
+    border: 2px solid #F6F8F7;
+    border-radius: 100px;
+    background-color: #F6F8F7;;
+}
+.our-projects__circle:first-child {
+    margin-left: 0;
+}
+.projects__button--big {
+    width: 295px;
+    height: 64px;
+}
+.our-projects__circle--blue {
+    background-color: #2947A9;
+}
+.our-projects__circles {
+    display: flex;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+/*
+  1. circule -> circle DONE
+  2. linck -> link DONE
+  3. our-projects__item фиксануть font-weight на 700 DONE
+  4. Когда ставим марджины, смотрим сначала можем ли поставить марджин родителю,
+  а потом уже ставим детям. Кажется, что margin-top нужно дать .our-projects,
+  а не детям .our-projects DONE
+  6. .our-projects__item, добавить состояния active, focus, hover, цвета любые по смыслу DONE
+  7. .our-projects__circule лучше взять в контейнер, тк мы 100% будем обращаться к кому-то, чтобы добавить детей через js DONE
+  8. У кнопок вперед-назад надо заменить класс на js-chto-to-drugoe, тк у нас уже есть класс js-next наверху DONE
+  Если будем выбирать через document.querySelector('.js-next') выйдет коллизия, тк выберется тот js-next, что наверху DONE
+  9. .our-projects__item у last-item надо убрать margin-bottom DONE
+  10. Попробуй удалить 2 figure и посмотреть что будет с версткой, так быть не должно DONE
+*/ 
+
+.form-users {
+    width: 100%;
+    height: 632px;
+    box-sizing: border-box;
+    display: flex;
+    margin-top: 140px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Work Sans', sans-serif;
+    font-style: normal;
+    color: #292E3D;
+    background-color: #F6F8F7;
+}
+.form-users--users-informations {
+    width: 595px;
+    display: grid;
+    grid-template-columns: 280px 280px;
+    column-gap: 32px;
+    row-gap: 20px;
+    justify-content: center;
+    border: none;
+    padding-bottom: 0;
+}
+.form-users--title {
+    margin-top: 0;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 42px;
+}
+.form-users--description {
+    margin-top: -10px;
+    margin-bottom: 40px;
+    width: 539px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+}
+.form-users--input-for-user {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 8px;
+    border: 1px solid #E0E3EB;
+    border-radius: 4px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+}
+
+.form-users--input-for-user__label {
+    display: flex;
+}
+.form-users--users-name__label::after {
+    margin-left: -195px;
+    margin-top: 10px;
+    content: " *";
+    color: #C40303;
+}
+.form-users--users-email__label::after {
+    margin-left: -240px;
+    margin-top: 10px;
+    content: " *";
+    color: #C40303;
+}
+.form-users--reason-contacting__label::after {
+    margin-left: -100px;
+    margin-top: 10px;
+    content: " *";
+    color: #C40303;
+}
+.form-users--reason-contacting {
+    width: 290px;
+   /* appearance: none;
+    background-image: url("./Vector(4).svg");*/
+    
+}
+
+/* .form-users--required-symbol::after {
+    margin-left: -230px;
+    content: " *";
+    color: #C40303;
+} */
+.form-users--message {
+    width: 595px;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    padding-top: 10px;
+    padding-left: 5px;
+    border: 1px solid #E0E3EB;
+    border-radius: 4px;
+    font-family: 'Work Sans', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+}
+.form-users--comment-for-textarea {
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    font-size: 16px;
+    line-height: 19px;
+    color: #A3AAC2;
+    
+}
+.form-users--comment-for-textarea-describe {
+    margin-left: 10px;
+    margin-top: 0;
+}
+.form-users--comment-for-textarea::after {
+    
+    margin-top: -35px;
+    content: " *";
+    color: #C40303;
+}
+
+.form-users--choose-reason {
+    color: #A3AAC2;
+}
+.projects__button--blue-submit {
+    width: 275px;
+    height: 53px;
+    background-color: #2947A9;
+}
+.header__logo--footers-left {
+    margin-left: 0;
+    justify-content: flex-start;
+}
+.footer {
+    margin-top: 85px;
+    font-family: 'Work Sans', sans-serif;
+    font-style: normal;
+}
+
+.footer h4 {
+    margin: 0;
+}
+.footer p {
+    margin: 0;
+}
+
+.footer__information {
+    display: grid;
+    height: 300px;
+    padding-bottom: 50px;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    column-gap: 100px;
+}
+.footer__contacts {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.footer__container-for-contacts {
+    display: flex;
+    
+    justify-content: flex-start;
+    align-items: center;
+}
+footer .footer__container-for-contacts .footer__description--adress {
+    margin-left: 10px;
+}
+
+
+
+.footer__title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+    color: #2947A9;
+    font-variant: small-caps;
+}
+.footer .footer__description {
+    margin-left: 15px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    color: #292E3D;
+}
+.projects__button--orange-and-white {
+    width: 136px;
+    height: 41px;
+    border-radius: 4px;
+    background-color: #F9995D;
+    color: #FFFFFF;
+}
+.footer__form-input-button {
+    display: flex;
+    
+}
+.footer__form-input {
+    width: 280px;
+    margin-right: 5px;
+    
+}
+.footer__social-networks {
+    display: flex;
+}
+.footer__social-logo {
+    margin-right: 15px;
+}
+.footer__social-logo:last-child {
+    margin-right: 0;
+}
+.footer__social-logo:hover {
+    opacity: 0.9;
+    transform: scale(1.2);
+}
+.footer__rights-reserved {
+    height: 70px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    background-color: #2947A9;
+    padding-top: 25px;
+    padding-left: 110px;
+}
+.footer__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
