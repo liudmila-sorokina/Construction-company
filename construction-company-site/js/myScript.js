@@ -1,7 +1,4 @@
-//1. Если нет переприсваивания то const
-// переприсваивание, это когда написали max= более одного раза DONE
-// 2. Переделать объекты в массив строчек DONE
-// 
+
 
 const ourProjects = [
     {
@@ -91,32 +88,65 @@ back.addEventListener("click", function (evt) {
 console.log(Object.keys(information));
 
 
-// DOM Tree (Document Object Model )
-// {document: { html: {
-//     body: [{
-//         { name: 'p', textContent: "kekekek"}
-//     }]
-// }}}
 
-// let document = {querySelector: function(string) {}}
-
-// js-next
-// js-back
 
 const menuLinks = document.querySelectorAll(".our-projects__link");
 const menuCircle = document.querySelectorAll(".our-projects__circle");
-const buttonNext = document.querySelector(".js-click-next");
-const buttonBack = document.querySelector(".js-click-back");
+
+const inputForUser = document.querySelectorAll(".form-users__input-for-user")[0];
+const inputForEmail = document.querySelector(".form-users__input-for-email");
+
+inputForUser.addEventListener("focus", function (evt) {
+    const redStar = document.querySelector(".form-users__label--name-star");
+    redStar.classList.add("hidden");
+
+    console.log(redStar);
+});
+
+
+
+inputForUser.addEventListener("blur", function (evt) {
+
+
+    if (inputForUser.value === "") {
+        const redStar = document.querySelector(".form-users__label--name-star");
+        redStar.classList.remove("hidden");
+    }
+
+    
+});
+
+inputForEmail.addEventListener("focus", function (evt) {
+    const redStarForEmail = document.querySelector(".form-users__label--email-star");
+    redStarForEmail.classList.add("hidden");
+
+    
+});
+
+
+
+inputForEmail.addEventListener("blur", function (evt) {
+
+    
+
+    if (inputForEmail.value === "") {
+        const redStarForEmail = document.querySelector(".form-users__label--email-star");
+        redStarForEmail.classList.remove("hidden");
+    }
+
+    
+});
+
 
 menuLinks[0].classList.add("js-current");
 menuLinks[0].classList.add("our-projects__link--active");
 
 const renderCard = function (card) {
-     //  Получили дом элементы которым будем добавлять карточки
+   
     const projectsExamples = document.querySelector("#projects-examples");
     const ourProjectsPhotos = document.querySelector(".our-projects__photos");
 
-    //  Создаем и формируем клон
+    
     const clon = projectsExamples.content.cloneNode(true);
     const image = clon.querySelector("img");
     image.src = card.img;
@@ -125,33 +155,33 @@ const renderCard = function (card) {
     const content = clon.querySelector("figcaption");
     content.textContent = card.adress;
 
-    //  Добавляем клон отцу с конца
+    
     ourProjectsPhotos.appendChild(clon);
 }
 
 const renderCards = function (cards, wantedType) {
-    //  Получили дом элементы которым будем добавлять карточки
+  
     const ourProjectsPhotos = document.querySelector(".our-projects__photos");
 
-    // Зачистили старые карточки
+    
     for (let i = ourProjectsPhotos.children.length - 1; i >= 0; i--) {
         ourProjectsPhotos.removeChild(ourProjectsPhotos.children[i]);
     }
 
-    // Добавляем только те карточки, которые надо. Смотрим на type
+    
     for (let i = 0; i < cards.length; i++) {
         if (cards[i].type === wantedType) {
-            // Вызываем функцию которая добавляет 1 карточку, в зависимости от i
+            
             renderCard(cards[i]);
         }
         if (wantedType === "All") {
-            // Вызываем функцию которая добавляет 1 карточку, в зависимости от i
+           
             renderCard(cards[i]);
         }
     }
 };
 
-// Первая загрузка. Мы решили что добавляем все карточки
+
 renderCards(ourProjects, "All");
 
 
@@ -163,12 +193,7 @@ for (const menuLink of menuLinks) {
         }
         menuLink.classList.add("js-current");
         menuLink.classList.add("our-projects__link--active");
-        for (let i = 0; i < menuCircle.length; i++) {
-            menuCircle[i].classList.remove("js-current");
-            menuCircle[i].classList.remove("our-projects__circle--blue");
-        }
-        menuCircle[0].classList.add("js-current");
-        menuCircle[0].classList.add("our-projects__circle--blue");
+     
 
         renderCards(ourProjects, evt.target.textContent);
     });
@@ -181,60 +206,7 @@ function cleanCircleColor(collection) {
     }
 }
 
-let j = 0;
-
-buttonNext.addEventListener("click", function (evt) {
-    j = j + 1;
-    cleanCircleColor(menuCircle);
-    if (j < menuCircle.length) {
-        menuCircle[j].classList.add("js-current");
-        menuCircle[j].classList.add("our-projects__circle--blue");
-    } else {
-        menuCircle[0].classList.add("js-current");
-        menuCircle[0].classList.add("our-projects__circle--blue");
-        j = 0;
-        console.log(j)
-    }
-});
-
-buttonBack.addEventListener("click", function (evn) {
-    j = j - 1;
-    cleanCircleColor(menuCircle);
-    if (j < 0) {
-        j = menuCircle.length - 1;
-        menuCircle[j].classList.add("js-current");
-        menuCircle[j].classList.add("our-projects__circle--blue");
-    } else {
-
-        menuCircle[j].classList.add("js-current");
-        menuCircle[j].classList.add("our-projects__circle--blue");
-
-    }
-});
 
 
 
-// {img: src = "./stone-building.png",
-// type: "Other",
-// title: "Grand office",
-// adress: "Georgia Tbilisi",
-// }
 
-// our-projects__photos
-
-{/* <figure class="our-projects__photo">
-                <img src={} class="our-projects__img">
-                <figcaption class="our-projects__description">
-                    <h4 class="our-projects__name">{}</h4>
-                    {}
-                </figcaption>
-            </figure> */}
-
-
-// const figure = new document.createElement('figure')
-// const img = new document.createElement('img')
-// figure.children = img
-
-// 
-
-// html tag template

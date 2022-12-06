@@ -6,15 +6,7 @@ body {
     flex-direction: column;
 }
 
-/* 
-1.Обернуть header и все следующие элементы в единый контейнер. DONE
-2. Задать единому контейнеру фиксированную ширину DONE
-3. Если что-то разъедется, то задать родительскому контейнеру ширину 100% DONE
-4. Внутри .our-reputation переделать все на flex, если это возможно DONE
-5. Если это нужно, убрать height внутри .our-reputation__item DONE
-5.5 Пройтись по коду и убрать height там где он не нужен DONE
-6. переделать дивы внутри .our-reputation на список DONE
-7. Обнулить стили ul DONE */
+
 main {
     width: 1440px;
 }
@@ -23,6 +15,10 @@ ul {
     padding-left: 0;
     margin: 0;
     list-style-type: none;
+}
+
+.hidden {
+    display: none;
 }
 
 .header {
@@ -95,7 +91,7 @@ ul {
     color: #FFFFFF;
 }
 
-/* 2 раза DONE*/
+
 
 .projects__carousel {
     width: 416px;
@@ -111,11 +107,9 @@ ul {
     height: 156px;
 }
 
-/* вынести в родителей все фонт фемили
-фонт сайзы лайн хейты фонт вейты DONE*/
+
 .projects__button {
-    /* убрать текст алиген DONE
-    отцентровать флексами DONE*/
+    
     width: 208px;
     height: 40px;
     border: none;
@@ -148,7 +142,7 @@ ul {
 }
 
 .projects__slogan {
-    /*  все что отвечает за размеры - вверьх DONE*/
+    
     margin-left: 112px;
     width: 556px;
     align-self: center;
@@ -169,6 +163,7 @@ ul {
 }
 
 .our-reputation {
+    padding-bottom: 158px;
     font-family: 'Work Sans', sans-serif;
     font-style: normal;
     font-weight: 700;
@@ -229,6 +224,7 @@ ul {
 
 .about-us__description {
     width: 370px;
+    padding-bottom: 75px;
     font-weight: 400;
     font-size: 20px;
     line-height: 23px;
@@ -236,22 +232,26 @@ ul {
 
 .about-us__button {
     width: 219px;
-    height: 53px;
-    margin-top: 55px;
+    
+    padding: 15px;
+    
     border: 2px solid #2947A9;
     border-radius: 6px;
-    font-weight: 600;
+    font-weight: 550;
     font-size: 18px;
     line-height: 21px;
     color: #2947A9;
+    background-color: #FFFFFF;
+    text-align: center;
+    text-decoration: none;
 }
 
 .about-us {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 150px;
-    margin-bottom: 225px;
+    
+    padding-bottom: 225px;
 }
 
 .about-us__photo {
@@ -259,15 +259,10 @@ ul {
     margin-bottom: -55px;
 }
 
-/* 1.  Нужно почитать про box-sizing: border-box; и рассказать максимушке
-2. У .about-us__information сделать круговой паддинг DONE
-3. Уменьшить width после того как верстка поедет DONE
-4. Постараться обойтись без height DONE
-5. Внутри about-us__information помениять background на background-color DONE
-6. Поставить alt в img DONE
-*/
+
 .services {
     display: grid;
+    padding-bottom: 76px;
     justify-content: center;
     background-color: #F6F8F7;
     font-family: 'Work Sans', sans-serif;
@@ -353,14 +348,10 @@ ul {
 }
 
 
-/* 1. .services__strip border-bottom instead of height&background-color DONE*/
-/* 2. Join modifiers services__item_blue-background and services__item_white-letters into one class DONE*/
-/* 3. modifier separator should be  -- instead of _ DONE */
-/* 4. There should be only one modifier instead of two DONE*/
-/* 5. To prevent next occurence of ul's padding-left, lets make ul { padding-left: 0} a global style DONE */
-/* Clear the clutter DONE */
+
 
 .years-experience {
+    padding-bottom: 100px;
     font-family: 'Work Sans', sans-serif;
     font-style: normal;
     display: grid;
@@ -397,17 +388,19 @@ ul {
 .years-experience__about {
     width: 330px;
     margin-top: 40px;
+    padding-bottom: 60px;
     font-weight: 400;
     font-size: 20px;
     line-height: 23px;
     color: #525B7A;
 }
 .about-us__button--blue-button {
-    width: 176px;
-    margin-top: 20px;
+    
+    padding: 16px 35px;
+    
     background-color: #2947A9;
     color: #FFFFFF;
-    font-weight: 600;
+    font-weight: 550;
     font-size: 18px;
     line-height: 21px;
 }
@@ -474,7 +467,7 @@ ul {
 .free-consultation {
     height: 300px;
     background-image: url(../kitchen.png);
-    margin-top: 60px;
+    
     padding-right: 65px;
     padding-left: 20px;
     display: flex;
@@ -500,19 +493,23 @@ ul {
 }
 .free-consultation__button {
     width: 232px;
-    height: 53px;
+    height: 33px;
+    padding-top: 10px;
     border: 2px solid #FFFFFF;
     border-radius: 4px;
     background-color: transparent;
     color: inherit;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 18px;
     line-height: 21px;
+    text-align: center;
+    text-decoration: none;
 }
 .our-projects {
     display: flex;
     width: 100%;
-    margin-top: 112px;
+    padding-bottom: 140px;
+    padding-top: 88px;
     justify-content: space-around;
     font-family: 'Work Sans', sans-serif;
     font-style: normal;
@@ -621,27 +618,15 @@ ul {
     margin-right: 10px;
 }
 
-/*
-  1. circule -> circle DONE
-  2. linck -> link DONE
-  3. our-projects__item фиксануть font-weight на 700 DONE
-  4. Когда ставим марджины, смотрим сначала можем ли поставить марджин родителю,
-  а потом уже ставим детям. Кажется, что margin-top нужно дать .our-projects,
-  а не детям .our-projects DONE
-  6. .our-projects__item, добавить состояния active, focus, hover, цвета любые по смыслу DONE
-  7. .our-projects__circule лучше взять в контейнер, тк мы 100% будем обращаться к кому-то, чтобы добавить детей через js DONE
-  8. У кнопок вперед-назад надо заменить класс на js-chto-to-drugoe, тк у нас уже есть класс js-next наверху DONE
-  Если будем выбирать через document.querySelector('.js-next') выйдет коллизия, тк выберется тот js-next, что наверху DONE
-  9. .our-projects__item у last-item надо убрать margin-bottom DONE
-  10. Попробуй удалить 2 figure и посмотреть что будет с версткой, так быть не должно DONE
-*/ 
+
 
 .form-users {
     width: 100%;
     height: 632px;
+    
     box-sizing: border-box;
     display: flex;
-    margin-top: 140px;
+   
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -660,13 +645,13 @@ ul {
     border: none;
     padding-bottom: 0;
 }
-.form-users--title {
+.form-users__title {
     margin-top: 0;
     font-weight: 700;
     font-size: 36px;
     line-height: 42px;
 }
-.form-users--description {
+.form-users__description {
     margin-top: -10px;
     margin-bottom: 40px;
     width: 539px;
@@ -675,7 +660,7 @@ ul {
     line-height: 23px;
     text-align: center;
 }
-.form-users--input-for-user {
+.form-users__input-for-user {
     width: 100%;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -687,40 +672,28 @@ ul {
     line-height: 21px;
 }
 
-.form-users--input-for-user__label {
+.form-users__label {
     display: flex;
 }
-.form-users--users-name__label::after {
+.form-users__label--name-star {
     margin-left: -195px;
     margin-top: 10px;
-    content: " *";
     color: #C40303;
 }
-.form-users--users-email__label::after {
+.form-users__label--email-star{
     margin-left: -240px;
     margin-top: 10px;
-    content: " *";
     color: #C40303;
 }
-.form-users--reason-contacting__label::after {
-    margin-left: -100px;
-    margin-top: 10px;
-    content: " *";
-    color: #C40303;
-}
-.form-users--reason-contacting {
+
+.form-users__reason-contacting {
     width: 290px;
-   /* appearance: none;
-    background-image: url("./Vector(4).svg");*/
+   
     
 }
 
-/* .form-users--required-symbol::after {
-    margin-left: -230px;
-    content: " *";
-    color: #C40303;
-} */
-.form-users--message {
+
+.form-users__message {
     width: 595px;
     margin-top: 20px;
     margin-bottom: 8px;
@@ -734,7 +707,7 @@ ul {
     font-size: 18px;
     line-height: 21px;
 }
-.form-users--comment-for-textarea {
+.form-users__comment-for-textarea {
     font-weight: 400;
     display: flex;
     flex-direction: column;
@@ -744,18 +717,18 @@ ul {
     color: #A3AAC2;
     
 }
-.form-users--comment-for-textarea-describe {
+.form-users__comment-for-textarea-describe {
     margin-left: 10px;
     margin-top: 0;
 }
-.form-users--comment-for-textarea::after {
+.form-users__comment-for-textarea::after {
     
     margin-top: -35px;
     content: " *";
     color: #C40303;
 }
 
-.form-users--choose-reason {
+.form-users__choose-reason {
     color: #A3AAC2;
 }
 .projects__button--blue-submit {
@@ -768,7 +741,7 @@ ul {
     justify-content: flex-start;
 }
 .footer {
-    margin-top: 85px;
+    padding-top: 85px;
     font-family: 'Work Sans', sans-serif;
     font-style: normal;
 }
@@ -850,11 +823,12 @@ footer .footer__container-for-contacts .footer__description--adress {
 }
 .footer__rights-reserved {
     height: 70px;
+    padding-top: 25px;
+    padding-left: 110px;
     box-sizing: border-box;
     color: #FFFFFF;
     background-color: #2947A9;
-    padding-top: 25px;
-    padding-left: 110px;
+   
 }
 .footer__form {
     display: flex;

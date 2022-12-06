@@ -16,16 +16,16 @@
             </div>
             <nav class="header__information">
                 <ul class="header__list">
-                    <li class="header__list-item"><a href="#" class="header__link">Home</a></li>
-                    <li class="header__list-item"><a href="#" class="header__link">About Us</a></li>
-                    <li class="header__list-item"><a href="#" class="header__link">Projects</a></li>
-                    <li class="header__list-item"><a href="#" class="header__link">Services</a></li>
-                    <li class="header__list-item"><a href="#" class="header__link">Contact Us</a></li>
+                    <li class="header__list-item"><a href="#projects" class="header__link">Home</a></li>
+                    <li class="header__list-item"><a href="#about-us" class="header__link">About Us</a></li>
+                    <li class="header__list-item"><a href="#our-projects" class="header__link">Projects</a></li>
+                    <li class="header__list-item"><a href="#services" class="header__link">Services</a></li>
+                    <li class="header__list-item"><a href="#form-users" class="header__link">Contact Us</a></li>
                 </ul>
             </nav>
 
         </header>
-        <div class="projects">
+        <div class="projects" id="projects">
             <h1 class="projects__slogan">Building things is our mission.</h1>
             <div class="projects__carousel">
                 <div class="projects__building-name">
@@ -65,7 +65,7 @@
                 </li>
             </ul>
         </section>
-        <section class="about-us">
+        <section class="about-us" id="about-us">
             <img class="about-us__photo" src="./unsplash_6anudmpILw4.png" alt="photo of a man">
             <div class="about-us__information">
                 <h2 class="about-us__title">About us</h2>
@@ -75,10 +75,10 @@
                     <p>We’ve matured into an industry leader and trusted resource for those seeking quality, innovation
                         and reliability when building in the U.S.</p>
                 </article>
-                <button class="about-us__button">More on Our History</button>
+                <a class="about-us__button" href="#years-experience">More on Our History</a>
             </div>
         </section>
-        <section class="services">
+        <section class="services" id="services">
             <h2 class="services__title">Services</h2>
             <ul class="services__list">
                 <li class="services__item services__item-1">
@@ -113,7 +113,7 @@
                 </li>
             </ul>
         </section>
-        <section class="years-experience">
+        <section class="years-experience" id="years-experience">
             <ul class="years-experience__list">
                 <li class="years-experience__item years-experience__item1">
                     <img src="./illus.svg" class="years-experience__picture-hands">
@@ -140,8 +140,8 @@
                 <h2 class="years-experience__title">30 Years Experience</h2>
                 <p class="years-experience__about">Our company has been the leading provided construction services to
                     clients throughout the USA since 1988.</p>
-                <button class="years-experience__button about-us__button about-us__button--blue-button">Contact
-                    Us</button>
+                <a class="years-experience__button about-us__button about-us__button--blue-button" href="#form-users">Contact
+                    Us</a>
             </article>
         </section>
         <section class="free-consultation">
@@ -150,93 +150,65 @@
                 <p class="free-consultation__contact">Just one call away:<a class="free-consultation__telephone"
                         href="tel:+8411022703">+84 1102 2703</a></p>
             </div>
-            <button class="free-consultation__button">Get your consultation</button>
+            <a class="free-consultation__button" href="#form-users">Get your consultation</a>
         </section>
-        <section class="our-projects">
+        <section class="our-projects" id="our-projects">
             <div class="our-projects__sidebar-container">
                 <h3 class="our-projects__title">Projects</h3>
                 <ul class="our-projects__sidebar">
-                    <li class="our-projects__item"><a href="#"
+                    <li class="our-projects__item"><a href="#our-projects"
                             class="our-projects__link our-projects__link--active">All</a></li>
-                    <li class="our-projects__item"><a href="#" class="our-projects__link">Commercial</a></li>
-                    <li class="our-projects__item"><a href="#" class="our-projects__link">Residential</a></li>
-                    <li class="our-projects__item"><a href="#" class="our-projects__link">Other</a></li>
+                    <li class="our-projects__item"><a href="#our-projects" class="our-projects__link">Commercial</a></li>
+                    <li class="our-projects__item"><a href="#our-projects" class="our-projects__link">Residential</a></li>
+                    <li class="our-projects__item"><a href="#our-projects" class="our-projects__link">Other</a></li>
                 </ul>
             </div>
             <article class="our-projects__examples">
                 <div class="our-projects__photos">
-                    <!-- <figure class="our-projects__photo">
-                <img src="./hotel.png" class="our-projects__img">
-                <figcaption class="our-projects__description">
-                    <h4 class="our-projects__name">Wildstone Infra Hotel</h4>
-                    2715 Ash Dr. San Jose, South Dakota
-                </figcaption>
-            </figure>
-            <figure class="our-projects__photo">
-                <img src="./stone-building.png" class="our-projects__img">
-                <figcaption class="our-projects__description">
-                    <h4 class="our-projects__name">Wish Stone Building</h4>
-                    2972 Westheimer Rd. Santa Ana, Illinois 
-                </figcaption>
-            </figure>
-            <figure class="our-projects__photo">
-                <img src="./house.png" class="our-projects__img">
-                <figcaption class="our-projects__description">
-                    <h4 class="our-projects__name">Mr. Parkinston’s House</h4>
-                    3517 W. Gray St. Utica, Pennsylvania
-                </figcaption>
-            </figure>
-            <figure class="our-projects__photo">
-                <img src="./height.png" class="our-projects__img">
-                <figcaption class="our-projects__description">
-                    <h4 class="our-projects__name">Oregano Height</h4>
-                    2464 Royal Ln. Mesa, New Jersey 
-                </figcaption>
-            </figure> -->
+                   
                 </div>
-               <!-- <div class="our-projects__buttons">
-                    <button class="projects__button js-click-back projects__button--big">
-                        <img src="./Vector.svg" class="projects__arrow">
-                        Back
-                    </button>
-                    <ul class="our-projects__circles">
-                        <li class="our-projects__circle our-projects__circle--blue"></li>
-                        <li class="our-projects__circle"></li>
-                        <li class="our-projects__circle"></li>
-                        <li class="our-projects__circle"></li>
-                    </ul>
-                    <button class="projects__button js-click-next projects__button--big">
-                        Next
-                        <img src="./Vector (1).svg" class="projects__arrow">
-                    </button>
-                </div> -->
+               
             </article>
         </section>
         <section>
-        <form action="#" method="get" class="form-users">
-            <h2 class="form-users--title">What can us do for you?</h2>
-            <p class="form-users--description">We are ready to work on a project of any complexity, whether it’s commercial or residential.</p>
+        <form action="#" method="get" class="form-users" id="form-users">
+            <h2 class="form-users__title">What can us do for you?</h2>
+            <p class="form-users__description">We are ready to work on a project of any complexity, whether it’s commercial or residential.</p>
            <fieldset class="form-users--users-informations">
-            <label class="form-users--input-for-user__label form-users--users-name__label">
-                <input class="form-users--input-for-user form-users--users-name" type="text" name="user-name" placeholder="Your Name" required pattern="[Aa-Zz]">
+            <label class="form-users__label form-users__label--name">
+                <input class="form-users__input-for-user" type="text" name="user-name" placeholder="Your Name" required pattern="[Aa-Zz]">
+                <div class="form-users__label--name-star"> *</div>
             </label>
-            <label class="form-users--input-for-user__label form-users--users-email__label">
-            <input class="form-users--input-for-user form-users--users-email" type="email" name="user-email" placeholder="Email" required>
+            <label class="form-users__label form-users__label--email">
+            <input class="form-users__input-for-user form-users__input-for-email" type="email" name="user-email" placeholder="Email" required>
+            <div class="form-users__label--email-star"> *</div>
             </label>
-            <label class="form-users--input-for-user__label form-users--reason-contacting__label">
-            <select class="form-users--input-for-user form-users--reason-contacting" name="reason-for-contacting" required>
-                <option class="form-users--choose-reason" value="" disabled selected>
-                    Reason for Contacting
+            <label class="form-users__label form-users__label--reason-contacting">
+            <select class="form-users__input-for-user form-users__reason-contacting" name="reason-for-contacting" required>
+                <option class="form-users__choose-reason" value="" selected>
+                    Building
+                </option>
+                <option>
+                    Looking for an arcitect
+                </option>
+                <option>
+                    Repair
+                </option>
+                <option>
+                    A question about a plгmbing
+                </option>
+                <option>
+                    Decorations
                 </option>
             </select>
             </label>
-            <input class="form-users--input-for-user form-users--users-phone" type="tel" placeholder="Phone">
+            <input class="form-users__input-for-user" type="tel" placeholder="Phone">
             </fieldset>
-            <label class="form-users--comment-for-textarea">
-            <textarea class="form-users--message" name="message" rows="6" placeholder="Message" minlength="5" maxlength="100"></textarea>
+            <label class="form-users__comment-for-textarea">
+            <textarea class="form-users__message" name="message" rows="6" placeholder="Message" minlength="5" maxlength="100"></textarea>
             
                 
-              <p class="form-users--comment-for-textarea-describe">indicates a required field</p>
+              <p class="form-users__comment-for-textarea-describe">indicates a required field</p>
             
             </label>
             <button class="projects__button projects__button--blue-submit" type="submit">Submit</button>
