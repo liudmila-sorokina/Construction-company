@@ -14,11 +14,13 @@ ul {
 }
 
 .header {
+  width: 1420px;
+
   display: flex;
   padding-top: 50px;
-
+  padding-bottom: 50px;
   justify-content: space-between;
-  width: 1420px;
+
 
 }
 
@@ -46,4 +48,128 @@ ul {
 
 .header__item:last-child {
   margin-right: 0;
+}
+
+.do-screenshot {
+  display: flex;
+  padding-top: 100px;
+  position: relative;
+  justify-content: space-between;
+  font-family: 'Rubik', sans-serif;
+  font-style: normal;
+}
+
+.do-screenshot__picture-for-decoration {
+  width: 170px;
+  height: 170px;
+  position: absolute;
+  top: -20px;
+  left: -300px;
+  filter: blur(6px);
+}
+
+.do-screenshot__information {
+  width: 525px;
+  padding-right: 60px;
+}
+
+.do-screenshot__title {
+  margin-bottom: 0;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 57px;
+  color: #131313;
+}
+
+.do-screenshot__decoration {
+  position: relative;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 57px;
+  color: #7421B0;
+}
+
+.do-screenshot__decoration::after {
+  width: 214px;
+  height: 58px;
+
+  position: absolute;
+  top: 0;
+  left: -5px;
+  background-repeat: no-repeat;
+  content: "";
+  background-image: url("../frame.png");
+}
+
+.do-screenshot__description {
+  padding: 0;
+  margin-top: 35px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 200%;
+  color: #828282;
+}
+
+.do-screenshot__button {
+  width: 235px;
+  height: 70px;
+  margin-top: 30px;
+  border-radius: 5px;
+  background: linear-gradient(97.02deg, #7421B0 28.9%, #D08EFF 139.98%);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: #FFFFFF;
+}
+
+.do-screenshot__img {
+  position: absolute;
+  left: 135px;
+  top: 0;
+  width: 848px;
+  height: 477px;
+  z-index: 3;
+  }
+
+.do-screenshot__pictures-section {
+  width: 848px;
+  position: relative;
+
+}
+
+.do-screenshot__background {
+  position: absolute;
+  top: -80px;
+  left: 375px;
+  width: 800px;
+  height: 740px;
+  border-radius: 70px;
+  background: linear-gradient(180deg, #7421B0 0%, #D08EFF 100%);
+  z-index: 1;
+}
+
+.do-screenshot__free {
+  position: absolute;
+  top: 450px;
+  right: 60px;
+  width: 282px;
+  height: 108px;
+  padding: 28px 52px 28px 50px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  background-color: rgba(196, 196, 196, 0.1);
+  box-sizing: border-box;
+  backdrop-filter: blur(20px);
+  z-index: 4;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 160%;
+  color: #FFFFFF;
+}
+
+.do-screenshot__rainbow {
+  position: absolute;
+  right: -218px;
+  bottom: -370px;
+  z-index: 2;
 }
