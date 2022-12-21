@@ -245,3 +245,126 @@ ul {
   background-color: #7421B0;
   color: #FFFFFF;
 }
+
+.features {
+  position: relative;
+  padding-top: 179px;
+}
+
+.features__rainbow {
+  position: absolute;
+  top: -4px;
+  left: -235px;
+}
+
+.features__img {
+  width: 705px;
+  height: 397px;
+}
+
+.features__list {
+  display: flex;
+  justify-content: space-between;
+  width: 1420px;
+  flex-wrap: wrap;
+  font-family: 'Rubik', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 180%;
+  color: #828282;
+}
+
+.features__description {
+  width: 460px;
+}
+
+.features__title {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 43px;
+  color: #131313;
+}
+
+.features__list li:nth-child(2) {
+  padding-right: 96px;
+  padding-top: 272px;
+}
+
+.features__list li:nth-child(3) {
+  padding-left: 130px;
+  padding-top: 365px;
+}
+
+
+
+.features__decoration-phrase {
+  color: #7421B0;
+}
+
+.features__list li:first-child {
+  position: relative;
+  width: 633px;
+  height: 556px;
+}
+
+.features__decoration-gradient {
+  width: 903px;
+  height: 650px;
+  position: absolute;
+  top: 123px;
+  left: -307px;
+  background: linear-gradient(90deg, rgba(255, 89, 248, 0.04) 0%, rgba(174, 114, 255, 0.04) 19.79%, rgba(144, 233, 237, 0.04) 40.62%, rgba(92, 209, 103, 0.04) 61.98%, rgba(255, 238, 0, 0.04) 82.53%);
+  border: 3px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(20px);
+  border-radius: 70px;
+  z-index: 2;
+}
+
+.features__decoration-circle {
+  width: 180px;
+  height: 180px;
+  position: absolute;
+  top: 25px;
+  left: -297px;
+  z-index: 1;
+}
+
+.features__img-mug {
+  position: absolute;
+  top: 238px;
+  left: 0;
+  z-index: 3;
+}
+
+.features__list li:nth-child(4) {
+  position: relative;
+  width: 633px;
+  height: 556px;
+}
+
+.features__img-river {
+  position: absolute;
+  top: 345px;
+  right: -22px;
+  z-index: 3;
+}
+
+.features__img-cube {
+  position: absolute;
+  top: 79px;
+  right: 68px;
+  width: 235px;
+  height: 235px;
+  z-index: 1;
+}
+
+.features__img-ellips {
+  position: absolute;
+  top: 0px;
+  right: -390px;
+  width: 890px;
+  height: 890px;
+  z-index: 2;
+  background: url("../Ellipse1.png") no-repeat;
+}
