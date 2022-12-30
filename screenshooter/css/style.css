@@ -263,21 +263,14 @@ ul {
   height: 397px;
 }
 
-.features__item-img-mug {
-  position: relative;
-}
-
-.features__item-img-river {
-  position: relative;
-}
-
 .features__item {
   display: flex;
   align-items: flex-end;
   margin-top: 200px;
 }
 
-.features__item-img-odd {
+.features__item-img {
+  position: relative;
   width: 812px;
   height: 451px;
 }
@@ -380,13 +373,9 @@ ul {
   padding-left: 85px;
 }
 
-.features__item-example-first {
-  position: relative;
-}
-
 .features__decoration-cube {
   position: absolute;
-  top: -177px;
+  top: -160px;
   left: -278px;
   width: 199px;
   height: 264px;
@@ -433,10 +422,6 @@ ul {
 .features__description--width {
   width: 462px;
   padding-left: 0;
-}
-
-.features__item-example-last {
-  position: relative;
 }
 
 .features__decoration-purple-toroid {
