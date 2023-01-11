@@ -230,6 +230,7 @@ ul {
   font-size: 20px;
   line-height: 160%;
   color: #131313;
+  cursor: pointer;
 }
 
 .meet-screenshot__item:last-child {
@@ -463,4 +464,37 @@ ul {
   bottom: -400px;
   left: -284px;
   z-index: 4;
+}
+
+.opportunities {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 389px;
+  padding-bottom: 100px;
+}
+
+.opportunities__button {
+  width: 235px;
+  height: 70px;
+  margin-top: 80px;
+  color: #FFFFFF;
+  background-color: #131313;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.opportunities__button:hover {
+  background-color: #D08EFF;
+}
+
+.opportunities__item {
+  height: 320px;
+  padding-top: 52px;
+  padding-left: 51px;
+  box-sizing: border-box;
+}
+
+.meet-screenshot__information--width {
+  width: 200px;
 }
