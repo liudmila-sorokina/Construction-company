@@ -614,3 +614,56 @@ ul {
   font-size: 18px;
   line-height: 200%;
 }
+
+.show {
+  display: block;
+}
+
+.header__hamburger {
+  display: none;
+  width: 40px;
+  height: 40px;
+}
+
+@media screen and (max-width: 960px) {
+  .header {
+    width: 100%;
+    padding: 30px 40px;
+    box-sizing: border-box;
+  }
+
+  .header__menu {
+    display: none;
+  }
+
+  .header__hamburger {
+    display: block;
+  }
+
+  .do-screenshot,
+  .meet-screenshot,
+  .features,
+  .opportunities,
+  .functions {
+    display: none;
+  }
+
+  .show {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 26px;
+    background-color: #D08EFF;
+  }
+
+  .header__item {
+    margin-right: 0;
+  }
+}
