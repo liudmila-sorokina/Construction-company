@@ -646,7 +646,7 @@ ul {
   }
 
 
-  .meet-screenshot,
+
   .features,
   .opportunities,
   .functions {
@@ -760,6 +760,43 @@ ul {
     top: 71%;
     left: -2%;
   }
+
+  .meet-screenshot {
+    width: 100%;
+    padding-left: 92px;
+    padding-top: 212px;
+  }
+
+  .meet-screenshot__title {
+    width: 263px;
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .meet-screenshot__description {
+    width: 324px;
+    padding-left: 92px;
+    height: 149px;
+    font-size: 12px;
+  }
+
+  .meet-screenshot__variants {
+    flex-wrap: wrap;
+    padding-top: 30px;
+  }
+
+  .meet-screenshot__item {
+    width: 265px;
+    height: 235px;
+    padding-left: 60px;
+    margin-bottom: 50px;
+    font-size: 18px;
+  }
+
+  .meet-screenshot__item-img {
+    width: 60px;
+    height: 60px;
+  }
 }
 
 @media screen and (max-width: 414px) {
@@ -835,5 +872,56 @@ ul {
 
   .do-screenshot {
     padding: 0;
+  }
+
+  .meet-screenshot {
+    align-items: center;
+    padding-top: 60px;
+    padding-left: 0;
+  }
+
+  .meet-screenshot__about {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .meet-screenshot__description {
+    padding-left: 0;
+    height: 109px;
+  }
+
+  .meet-screenshot__title {
+    padding-left: 8px;
+    height: 69px;
+  }
+
+  .meet-screenshot__information {
+    margin-top: 0;
+    width: 117px;
+    height: 38px;
+    font-size: 14px;
+    line-height: 133%;
+  }
+
+  .meet-screenshot__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 345px;
+    height: 92px;
+    padding: 0;
+    margin-bottom: 20px;
+    margin-right: 0;
+  }
+
+  .meet-screenshot__item-img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .meet-screenshot__variants {
+    flex-wrap: nowrap;
+    flex-direction: column;
   }
 }
