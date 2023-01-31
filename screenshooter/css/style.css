@@ -485,6 +485,8 @@ ul {
   align-items: center;
   padding-top: 389px;
   padding-bottom: 100px;
+  font-family: 'Rubik', sans-serif;
+  font-style: normal;
 }
 
 .opportunities__button {
@@ -656,7 +658,7 @@ ul {
 
 
 
-  .opportunities,
+
   .functions {
     display: none;
   }
@@ -771,7 +773,7 @@ ul {
 
   .meet-screenshot {
     width: 100%;
-    padding-left: 92px;
+    padding-left: 35px;
     padding-top: 212px;
   }
 
@@ -791,6 +793,7 @@ ul {
   .meet-screenshot__variants {
     flex-wrap: wrap;
     padding-top: 30px;
+    justify-content: center;
   }
 
   .meet-screenshot__item {
@@ -985,6 +988,37 @@ ul {
   .features__img-rainbow {
     display: none;
   }
+
+  .features__description--margin-negative {
+    margin-bottom: 10px;
+  }
+
+  .opportunities {
+    width: 100%;
+    padding-top: 20px;
+    padding-left: 44px;
+  }
+
+  .opportunities__item {
+    width: 324px;
+    height: 294px;
+    padding-top: 51px;
+    padding-left: 56px;
+    margin-bottom: 44px;
+  }
+
+  .opportunities__button {
+    width: 170px;
+    height: 44px;
+    margin-top: 4px;
+    margin-right: 23px;
+    font-size: 12px;
+    line-height: 150%;
+  }
+
+  .meet-screenshot__item:nth-child(2) {
+    margin-right: 0;
+  }
 }
 
 @media screen and (max-width: 414px) {
@@ -1088,7 +1122,7 @@ ul {
     margin-top: 0;
     width: 117px;
     height: 38px;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 133%;
   }
 
@@ -1260,5 +1294,23 @@ ul {
 
   .features__img-rainbow {
     display: none;
+  }
+
+  .opportunities {
+    padding-top: 37px;
+    padding-left: 0;
+  }
+
+  .opportunities__item {
+    margin-bottom: 30px;
+    padding-right: 23px;
+  }
+
+  .meet-screenshot__information--width {
+    padding-bottom: 24px;
+  }
+
+  .opportunities__button {
+    margin-right: 0;
   }
 }
