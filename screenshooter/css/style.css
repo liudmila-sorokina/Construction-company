@@ -655,14 +655,6 @@ ul {
     display: block;
   }
 
-
-
-
-
-  .functions {
-    display: none;
-  }
-
   .show {
     position: absolute;
     top: 100px;
@@ -1019,6 +1011,83 @@ ul {
   .meet-screenshot__item:nth-child(2) {
     margin-right: 0;
   }
+
+  .functions {
+    width: 100%;
+    padding: 0;
+  }
+
+  .functions__list {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 76px;
+    padding-left: 139px;
+  }
+
+  .functions::after {
+    width: 95%;
+    height: 1025px;
+    margin-left: 6%;
+    box-sizing: border-box;
+  }
+
+  .functions__title {
+    width: 286px;
+    margin-left: 12%;
+    margin-top: 8%;
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .functions__description {
+    font-size: 14px;
+  }
+
+  .functions__subtitle {
+    margin: 0;
+    font-size: 18px;
+    line-height: 21px;
+  }
+
+  .functions__number {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .functions__img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .functions__item {
+    display: flex;
+    width: 730px;
+    margin-right: 0;
+    padding-bottom: 0;
+    margin-bottom: 66px;
+    justify-content: space-around;
+  }
+
+  .functions__information {
+    width: 442px;
+  }
+
+  .functions__decoration-sphere {
+    width: 151px;
+    height: 147px;
+    top: -59px;
+    right: 103px;
+  }
+
+  .functions__decoration-left-cylinder {
+    width: 105px;
+    height: 152px;
+  }
+
+  .functions__decoration-right-cylinder {
+    width: 154px;
+    height: 226px;
+  }
 }
 
 @media screen and (max-width: 414px) {
@@ -1312,5 +1381,73 @@ ul {
 
   .opportunities__button {
     margin-right: 0;
+  }
+
+  .functions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .functions__item {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .functions__information {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 344px;
+    margin-top: 30px;
+    text-align: center;
+  }
+
+  .functions__description {
+    font-size: 12px;
+  }
+
+  .functions__subtitle {
+    width: fit-content;
+  }
+
+  .functions__break {
+    display: none;
+  }
+
+  .functions__list {
+    padding-left: 0;
+    margin-top: 12px;
+  }
+
+  .functions::after {
+    width: 100%;
+    height: 1215px;
+    margin-left: 0;
+    border-radius: 35px;
+  }
+
+  .functions__number {
+    margin-right: 31px;
+    margin-left: 20px;
+  }
+
+  .functions__decoration-left-cylinder,
+  .functions__decoration-right-cylinder {
+    display: none;
+  }
+
+  .functions__title {
+    margin-left: 0;
+    margin-top: 12%;
+    text-align: center;
+  }
+
+  .functions__decoration-sphere {
+    width: 75px;
+    height: 72px;
+    top: -37px;
+    right: 45px;
   }
 }
