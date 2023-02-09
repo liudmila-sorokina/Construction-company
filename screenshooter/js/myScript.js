@@ -8,3 +8,7 @@ hamburger.addEventListener ("click", function(evt) {
 headerMenu.addEventListener ("click", function(evt) {
   headerMenu.classList.remove("show");
 })
+
+
+
+// function dec(a) { return a - 0.33*a }
