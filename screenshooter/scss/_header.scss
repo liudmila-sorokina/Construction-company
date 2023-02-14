@@ -1,0 +1,78 @@
+@import 'colors';
+
+.header {
+  width: 1420px;
+  display: flex;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  justify-content: space-between;
+
+  &__language {
+    border: none;
+  }
+
+  &__item {
+    margin-right: 65px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__menu,
+  &__menu select {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Rubik', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: $base-gray;
+    z-index: 9;
+  }
+
+  &__hamburger {
+    display: none;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .header {
+    width: 100%;
+    padding: 30px 40px;
+    box-sizing: border-box;
+
+    &__menu {
+      display: none;
+    }
+  
+    &__hamburger {
+      display: block;
+    }
+
+    &__item {
+      margin-right: 0;
+    }
+  
+    &__logo {
+      width: 180px;
+      height: 28px;
+    }
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .header {
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 0;
+
+    &__logo {
+      width: 141px;
+      height: 22px;
+    }
+  }
+}

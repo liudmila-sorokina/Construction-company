@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+@import 'html_tags';
+@import 'header';
+@import "do-screenshot";
+@import "opportunities";
+@import "meet-screenshot";
+@import "features";
+@import "functions";
+@import "footer";
+@import "service-classes";
+
+// 1. Приводим css к scss
+// 2. импортируем новый файл в главном файле
+// 3. Заводим переменные для цветов и меняем #9werwer на $space-green
+// 4. Запускаем команду gulp чтобы собрать из scss наш css
