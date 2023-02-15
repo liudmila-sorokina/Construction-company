@@ -1,0 +1,24 @@
+@import 'colors';
+
+.show {
+  display: block;
+}
+
+@media screen and (max-width: 960px) {
+  .show {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    margin-top: -36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-size: 26px;
+    background-color: $light-purple;
+    z-index: 999;
+  }
+}

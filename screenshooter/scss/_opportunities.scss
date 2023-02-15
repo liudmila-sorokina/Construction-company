@@ -1,0 +1,75 @@
+@import 'colors';
+
+.opportunities {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 261px;
+  padding-bottom: 67px;
+  font-family: 'Rubik', sans-serif;
+  font-style: normal;
+
+  &__button {
+    width: 157px;
+    height: 47px;
+    margin-top: 45px;
+    color: $white;
+    background-color: $black;
+    border-radius: 5px;
+    font-size: 11px;
+
+    &:hover {
+      background-color: $light-purple;
+    }
+  }
+
+  &__item {
+    height: 188px;
+    padding-top: 28px;
+    padding-left: 34px;
+    box-sizing: border-box;
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .opportunities {
+    width: 100%;
+    padding-top: 20px;
+    padding-left: 44px;
+    box-sizing: border-box;
+
+    &__item {
+      width: 324px;
+      height: 294px;
+      padding-top: 51px;
+      padding-left: 56px;
+      margin-bottom: 44px;
+    }
+
+    &__button {
+      width: 170px;
+      height: 44px;
+      margin-top: 4px;
+      margin-right: 23px;
+      font-size: 12px;
+      line-height: 150%;
+    }
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .opportunities {
+    padding-top: 37px;
+    padding-left: 0;
+
+    &__item {
+      margin-bottom: 30px;
+      padding-right: 23px;
+    }
+
+    &__button {
+      margin-right: 0;
+    }
+  }
+}
