@@ -1,0 +1,102 @@
+@import "colors";
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 1000px;
+  background-color: $base-orange;
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 475px;
+    height: 550px;
+    padding-top: 22px;
+    box-sizing: border-box;
+    padding-bottom: 9px;
+    background-color: $White;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+  }
+
+  &__all-inputs {
+    display: flex;
+    flex-direction: column;
+    height: 252px;
+    justify-content: space-around;
+    padding-top: 14px;
+  }
+  
+  &__label {
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: $base-gray;
+  }
+
+  &__title {
+    padding-left: 10px;
+    padding-right: 18px;
+    border-left: 6px solid $light-orange;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 39px;
+  }
+  
+  &__subtitle {
+    margin-top: 15px;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 27px;
+  }
+  
+  &__explanation {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: $base-gray;
+  }
+
+  &__hint {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: $base-gray;
+  }
+  
+  &__link {
+    color: $base-orange;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+  }
+  
+  &__input {
+    width: 415px;
+    height: 44px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 15px;
+    box-sizing: border-box;
+    border: 1px solid $milk-color;
+    border-radius: 4px;
+
+    &--button {
+      padding-left: 0;
+      background-color: $base-orange;
+      color: $White;
+      text-align: center;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 17px;
+    }
+  }
+}
