@@ -1,0 +1,118 @@
+@import "colors";
+
+.information {
+  width: 1170px;
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+
+  &__forms-container {
+    width: 1170px;
+    height: 60px;
+    padding-left: 30px;
+    padding-right: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
+  &__input {
+    width: 212px;
+    height: 37px;
+    border: 1px solid #E5E5E5;
+    border-radius: 8px;
+    box-sizing: border-box;
+    padding-left: 5px;
+  }
+
+  &__bell-button {
+    width: 17px;
+    height: 20px;
+  }
+
+  &__inputs-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 307px;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 40px;
+  }
+
+  &__item {
+    width: 255px;
+    height: 157px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    padding-top: 24px;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+    color: #6C6C6C;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  &__item-blue {
+    background-color: #F0F9FF;
+  }
+
+  &__item-pink {
+    background-color: #FEF6FB;
+  }
+
+  &__item-orange {
+    background-color: #FEFBEC;
+  }
+
+  &__item-gradient {
+    background: linear-gradient(110.42deg, #FEAF00 18.27%, #F8D442 91.84%);
+    color: $White;
+  }
+
+  &__img-hat {
+    width: 48px;
+    height: 28px;
+    margin-bottom: 18px;
+    filter: invert(71%) sepia(30%) saturate(689%) hue-rotate(166deg) brightness(97%) contrast(91%);
+  }
+
+  &__img-bookmark {
+    width: 28px;
+    height: 35px;
+    margin-bottom: 18px;
+    filter: invert(73%) sepia(80%) saturate(437%) hue-rotate(285deg) brightness(98%) contrast(90%);
+  }
+
+  &__img-dollar {
+    width: 35px;
+    height: 35px;
+    margin-bottom: 18px;
+    filter: invert(78%) sepia(36%) saturate(647%) hue-rotate(351deg) brightness(101%) contrast(93%);
+  }
+
+  &__img-human {
+    width: 34px;
+    height: 34px;
+    margin-bottom: 18px;
+  }
+
+  &__quantity {
+    margin-top: 12px;
+    color: $black;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 37px;
+    align-self: flex-end;
+
+    &--small {
+      font-size: 20px;
+    }
+  }
+}
