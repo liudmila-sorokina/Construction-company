@@ -340,7 +340,7 @@ a {
 .opportunities__button:hover {
   background-color: #D08EFF;
 }
-.opportunities__item {
+ul .opportunities__item {
   height: 188px;
   padding-top: 28px;
   padding-left: 34px;
