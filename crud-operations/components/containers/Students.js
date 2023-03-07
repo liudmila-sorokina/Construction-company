@@ -1,8 +1,30 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import InformSearch from "../InformSearch";
 import StudentsItem from "../StudentsItem";
+import axios, { isCancel, AxiosError } from "axios";
+
+var config = {
+  method: 'get',
+  url: 'https://users-e87a.restdb.io/rest/students',
+  headers: {
+    'Content-Type': 'application/json',
+    'x-apikey': '63e26aaf478852088da67e61'
+  }
+};
 
 const Students = () => {
+  const [state, setState] = useState([]);
+
+  useEffect(() => {
+    axios(config)
+    .then(function (response) {
+      setState(response.data);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }, [])
+
   return (
     <section className="students-list">
       <InformSearch />
@@ -19,9 +41,7 @@ const Students = () => {
       </div>
       <table className="students-list__table">
         <StudentsItem name="Name" email="Email" phone="Phone" number="Enroll Number" date="Date of admission" />
-        <StudentsItem photopath="#" name="Karthi" email="karthi@gmmail.com" phone="7305477760" number="1234567305477760" date="08-Dec, 2021" />
-        <StudentsItem photopath="#" name="Ron" email="ron@gmmail.com" phone="7404455560" number="3333367305477760" date="01-Dec, 2021" />
-        <StudentsItem photopath="#" name="Ann" email="ann@gmmail.com" phone="7202433360" number="5555567305477760" date="02-Dec, 2021" />
+        {state.map((student) => <StudentsItem photopath="#" name={student.name} email={student.email} phone={student.phone} number={student.number} date={student.date} key={student.name} />)}
       </table>
     </section>
   );
