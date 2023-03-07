@@ -1,0 +1,51 @@
+@import "colors";
+
+.courses-list {
+  width: 1170px;
+  box-sizing: border-box;
+
+  &__table {
+    width: 100%;
+    border-left: 30px solid $light-gray;
+    border-right: 30px solid $light-gray;
+    border-top: 1px solid $milk-color;
+    border-bottom: 9px solid $light-gray;
+    background-color: $light-gray;
+    border-collapse: collapse;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  &__table-row {
+    width: 1110px;
+    height: 51px;
+    box-sizing: border-box;
+
+    &:nth-child(even) {
+      background-color: $light-gray;
+    }
+
+    &:nth-child(odd) {
+      background-color: $White;
+    }
+  }
+
+  &__table-head {
+    padding-left: 5px;
+    box-sizing: border-box;
+    color: #ACACAC;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: left;
+    background-color: $light-gray;
+  }
+
+  &__table-data {
+    padding-left: 5px;
+  }
+};
