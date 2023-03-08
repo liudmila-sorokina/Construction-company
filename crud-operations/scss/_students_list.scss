@@ -78,15 +78,15 @@
     & td:last-child {
       border-radius: 0 40px 40px 0;
     }
+  }
 
-    &:first-child {
-      background-color: $light-gray;
-      font-weight: 600;
-      font-size: 12px;
-      line-height: 15px;
-      color: #ACACAC;
-      border-color: #ACACAC;
-    }
+  &__thead {
+    background-color: $light-gray;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    color: #ACACAC;
+    border-color: #ACACAC;
   }
 
   &__table-data {

@@ -3,7 +3,7 @@ import InformSearch from "../InformSearch";
 import StudentsItem from "../StudentsItem";
 import axios, { isCancel, AxiosError } from "axios";
 
-var config = {
+const config = {
   method: 'get',
   url: 'https://users-e87a.restdb.io/rest/students',
   headers: {
@@ -15,14 +15,35 @@ var config = {
 const Students = () => {
   const [state, setState] = useState([]);
 
+  //Раньше
+  //const obj = {a: { b: 3}}
+  // const temp = obj['a']['b']
+  // const temp = obj.a.b
+
+  // // ES6
+  //const {a: { b: temp}} = obj
+  //то что в ключе a и в ключе b положи в переменную temp
+
+  //деструктурирующее присваивание
+
+
+  // //Раньше
+
+  // const kekus = [1,2,3,4]
+  // const first = kekus[0]
+  // const second = kekus[1]
+  // const third = kekus[2]
+
+  // // ES6
+
+  //   const [first, second, third] = kekus
+
+  //в конфиге мы сохраняем то, что нам надо передать в бекэнд (описание http запроса), передаем конфиг аксиосу, который формирует из конфига http запрос и отправляет его на бекэнд и бекэнд понимает, что мы от него хотим
+
   useEffect(() => {
     axios(config)
-    .then(function (response) {
-      setState(response.data);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+      .then((response) => setState(response.data))
+      .catch((error) => console.log(error))
   }, [])
 
   return (
@@ -40,8 +61,12 @@ const Students = () => {
         </div>
       </div>
       <table className="students-list__table">
-        <StudentsItem name="Name" email="Email" phone="Phone" number="Enroll Number" date="Date of admission" />
-        {state.map((student) => <StudentsItem photopath="#" name={student.name} email={student.email} phone={student.phone} number={student.number} date={student.date} key={student.name} />)}
+        <thead className="students-list__thead">
+          <StudentsItem name="Name" email="Email" phone="Phone" number="Enroll Number" date="Date of admission" />
+        </thead>
+        <tbody>
+          {state.map((student) => <StudentsItem photopath="#" name={student.name} email={student.email} phone={student.phone} number={student.number} date={student.date} key={student.name} />)}
+        </tbody>
       </table>
     </section>
   );

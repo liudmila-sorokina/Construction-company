@@ -1,14 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import InformSearch from "../InformSearch";
 import PaymentsItem from "../PaymentsItem";
+import axios from "axios";
+
+const config = {
+  method: 'get',
+  url: 'https://users-e87a.restdb.io/rest/payments',
+  headers: {
+    'Content-Type': 'application/json',
+    'x-apikey': '63e26aaf478852088da67e61'
+  }
+};
 
 const Payment = () => {
+  const [state, setState] = useState([]);
+
+  useEffect(() => {
+    axios(config)
+      .then((response) => setState(response.data))
+      .catch((error) => console.log(error))
+  }, [])
+
   return (
     <section className="payments-list">
-<InformSearch />
+      <InformSearch />
       <div className="students-list__search">
         <h2 className="students-list__title">
-        Payment Details
+          Payment Details
         </h2>
         <div className="students-list__buttons-container">
           <button className="students-list__filter">
@@ -23,15 +41,20 @@ const Payment = () => {
             <th className="payments-list__table-head">Payment Schedule</th>
             <th className="payments-list__table-head">Bill Number</th>
             <th className="payments-list__table-head">Amount Paid</th>
-            <th className="payments-list__table-head">Balance amount</th>
+            <th className="payments-list__table-head">Payment type</th>
             <th className="payments-list__table-head">Date</th>
             <th className="payments-list__table-head"></th>
           </tr>
         </thead>
         <tbody>
-        <PaymentsItem name="Karthi" paymentSchedule="First" bill="00012223" amountPaid="INR 35,000" balance="INR 55,000" data="08-Dec, 2021" />
-        <PaymentsItem name="Karthi" paymentSchedule="First" bill="00012223" amountPaid="INR 35,000" balance="INR 55,000" data="08-Dec, 2021" />
-        <PaymentsItem name="Karthi" paymentSchedule="First" bill="00012223" amountPaid="INR 35,000" balance="INR 55,000" data="08-Dec, 2021" />
+          {state.map((payment) => <PaymentsItem
+            name={payment.student && payment.student[0].name}
+            paymentSchedule={payment.payment_schedule}
+            bill={payment.bill}
+            amountPaid={payment.amount}
+            balance={payment.type}
+            data={payment.created_at}
+            key={payment.bill} />)}
         </tbody>
       </table>
     </section>
