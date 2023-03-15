@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import InformSearch from "../InformSearch";
 import StudentsItem from "../StudentsItem";
 import axios, { isCancel, AxiosError } from "axios";
+import { Link } from "react-router-dom";
 
 const config = {
   method: 'get',
@@ -57,7 +58,7 @@ const Students = () => {
           <button className="students-list__filter">
             <img src="./svg/arrows-up-down-crud.svg" alt="arrows up down" />
           </button>
-          <button className="students-list__button">ADD NEW STUDENT</button>
+          <Link className="students-list__button" to="/students/new">ADD NEW STUDENT</Link>
         </div>
       </div>
       <table className="students-list__table">
