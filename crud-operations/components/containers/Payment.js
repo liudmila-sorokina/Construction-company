@@ -21,8 +21,9 @@ const Payment = () => {
       .catch((error) => console.log(error))
   }, [])
 
+  const showMessage = (e) => console.log('kekekek')
   return (
-    <section className="payments-list">
+    <section className="payments-list" onClick={showMessage}>
       <InformSearch />
       <div className="students-list__search">
         <h2 className="students-list__title">

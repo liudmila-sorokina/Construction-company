@@ -11,7 +11,8 @@ import Payment from "./containers/Payment";
 import Report from "./containers/Report";
 import Settings from "./containers/Settings";
 import Students from "./containers/Students";
-import StudentsForm from "./StudentsForm"
+import StudentsForm from "./StudentsForm";
+import CoursesForm from "./CoursesForm";
 
 
 const App = () => {
@@ -22,11 +23,12 @@ const App = () => {
         <Route path="/" element={<Information />} />
         <Route path="/home" element={<Information />} />
         <Route path="/course" element={<Course />} />
-        <Route path="/payment" element={<Payment />} />
+        <Route path="/payment" element={<Payment/>} />
         <Route path="/report" element={<Report />} />
         <Route path="/settings" element={<Settings />} />
         <Route path="/students" element={<Students />} />
         <Route path="/students/new" element={<StudentsForm />} />
+        <Route path="/courses/new" element={<CoursesForm />} />
       </Routes>
     </BrowserRouter>
   )

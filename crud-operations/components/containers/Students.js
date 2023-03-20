@@ -55,7 +55,7 @@ const Students = () => {
           Students List
         </h2>
         <div className="students-list__buttons-container">
-          <button className="students-list__filter">
+          <button className="students-list__filter" onClick={()=> {console.log('YARRRR')}}>
             <img src="./svg/arrows-up-down-crud.svg" alt="arrows up down" />
           </button>
           <Link className="students-list__button" to="/students/new">ADD NEW STUDENT</Link>
@@ -66,7 +66,7 @@ const Students = () => {
           <StudentsItem name="Name" email="Email" phone="Phone" number="Enroll Number" date="Date of admission" />
         </thead>
         <tbody>
-          {state.map((student) => <StudentsItem photopath="#" name={student.name} email={student.email} phone={student.phone} number={student.number} date={student.date} key={student.name} />)}
+          {state.map((student) => <StudentsItem photopath="#" name={student.name} email={student.email} phone={student.phone} number={student.number} date={student.date} key={student.name} id={student._id} />)}
         </tbody>
       </table>
     </section>

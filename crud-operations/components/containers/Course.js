@@ -7,6 +7,7 @@ import CoursesItem from "../CoursesItem";
 //импортируем в этот модуль библиотеку аксиос, которая поможет потом нам передать запрос бекэнду
 
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 //присваиваем переменной конфиг информацию о запросе на бекэнд (то есть то, что мы будем перерсылать на бекэнд: метод, урл-адрес, хедерсы)
 
@@ -69,7 +70,7 @@ useEffect(() => {
           <button className="students-list__filter">
             <img src="./svg/arrows-up-down-crud.svg" alt="arrows up down" />
           </button>
-          <button className="students-list__button">ADD NEW COURSE</button>
+          <Link className="students-list__button" to="/courses/new" >ADD NEW COURSE</Link>
         </div>
       </div>
       <table className="courses-list__table">
@@ -89,6 +90,8 @@ useEffect(() => {
           title={course.title}
           description={`${course.description.substr(0, 20)}...`}
           hours={course.how_many_hours}
+          id={course._id}
+          key={course.title}
           />)}
 
 
