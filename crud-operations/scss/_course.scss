@@ -1,0 +1,15 @@
+@import "colors";
+
+.One-course {
+  padding: 20px;
+
+  &__item {
+    padding-top: 10px;
+    padding-left: 10px;
+    border-left: 2px solid $base-orange;
+  }
+
+  &__title {
+    font-size: 25px;
+  }
+}
