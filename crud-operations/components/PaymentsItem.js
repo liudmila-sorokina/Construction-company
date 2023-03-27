@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const PaymentsItem = (props) => {
   return (
@@ -10,7 +11,7 @@ const PaymentsItem = (props) => {
       <td className="payments-list__table-data">{props.balance}</td>
       <td className="payments-list__table-data">{props.data}</td>
       <td className="payments-list__table-data">
-        <img src="crud-operations/svg/eye-crud.svg" alt="eye" />
+       <Link to={`/payments/${props.id}`}> <img src="crud-operations/svg/eye-crud.svg" alt="eye" /> </Link>
       </td>
     </tr>
   );

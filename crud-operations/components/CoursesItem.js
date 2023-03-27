@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 //импортируем библиотеку axios в этот модуль
 
@@ -27,7 +28,7 @@ const deleteCourse = () => {
 
   return (
     <tr className="courses-list__table-row">
-      <td className="courses-list__table-data">{props.title}</td>
+      <td className="courses-list__table-data"><Link to={`/courses/${props.id}`}>{props.title}</Link></td>
       <td className="courses-list__table-data">{props.description}</td>
       <td className="courses-list__table-data">{props.hours}</td>
 

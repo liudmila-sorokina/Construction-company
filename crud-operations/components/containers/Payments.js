@@ -12,7 +12,7 @@ const config = {
   }
 };
 
-const Payment = () => {
+const Payments = () => {
   const [state, setState] = useState([]);
 
   useEffect(() => {
@@ -21,9 +21,8 @@ const Payment = () => {
       .catch((error) => console.log(error))
   }, [])
 
-  const showMessage = (e) => console.log('kekekek')
   return (
-    <section className="payments-list" onClick={showMessage}>
+    <section className="payments-list">
       <InformSearch />
       <div className="students-list__search">
         <h2 className="students-list__title">
@@ -55,11 +54,12 @@ const Payment = () => {
             amountPaid={payment.amount}
             balance={payment.type}
             data={payment.created_at}
-            key={payment.bill} />)}
+            key={payment.bill}
+            id={payment._id} />)}
         </tbody>
       </table>
     </section>
   )
 };
 
-export default Payment;
+export default Payments;

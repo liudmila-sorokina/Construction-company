@@ -5,7 +5,6 @@ import axios from "axios";
 
 
 const StudentsItem = (props) => {
-  const temp = () => alert('KEKEKKE')
   const config = {
     method: 'delete',
     url: `https://users-e87a.restdb.io/rest/students/${props.id}`,
@@ -23,10 +22,10 @@ const StudentsItem = (props) => {
     
   };
   return (
-
+//jsx надстройка реакта над джаваскриптом
     <tr className="students-list__table-row">
       <td className="students-list__table-data"><img src={props.photopath} className="students-list__photo" /></td>
-      <td className="students-list__table-data">{props.name}</td>
+      <td className="students-list__table-data"><Link to={`/students/${props.id}`}>{props.name}</Link></td>
       <td className="students-list__table-data">{props.email}</td>
       <td className="students-list__table-data">{props.phone}</td>
       <td className="students-list__table-data">{props.number}</td>
