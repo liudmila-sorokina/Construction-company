@@ -21,6 +21,8 @@ const StudentsItem = (props) => {
         .catch((error) => console.log(error))
     
   };
+
+  
   return (
 //jsx надстройка реакта над джаваскриптом
     <tr className="students-list__table-row">
@@ -31,7 +33,7 @@ const StudentsItem = (props) => {
       <td className="students-list__table-data">{props.number}</td>
       <td className="students-list__table-data">{props.date}</td>
       <td className="students-list__table-data">
-        <img src="crud-operations/svg/pencil-crud.svg" alt="pencil" />
+       <Link to={`/students/${props.id}/edit`} state={props}><img src="crud-operations/svg/pencil-crud.svg" alt="pencil" /></Link> 
         <img src="crud-operations/svg/pencil-crud.svg" alt="bucket" onClick={deleteStudent} />
       </td>
     </tr>

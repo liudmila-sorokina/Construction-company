@@ -51,7 +51,7 @@ const Payments = () => {
             name={payment.student && payment.student[0].name}
             paymentSchedule={payment.payment_schedule}
             bill={payment.bill}
-            amountPaid={payment.amount}
+            amount={payment.amount}
             balance={payment.type}
             data={payment.created_at}
             key={payment.bill}

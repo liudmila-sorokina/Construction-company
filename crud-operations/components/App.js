@@ -16,6 +16,9 @@ import CoursesForm from "./CoursesForm";
 import Student from "./Student";
 import Course from "./Course";
 import Payment from "./Payment";
+import StudentsUpdate from "./StudentsUpdate";
+import CoursesUpdate from "./CoursesUpdate";
+import PaymentsUpdate from "./PaymentsUpdate";
 
 const App = () => {
   return (
@@ -34,6 +37,9 @@ const App = () => {
         <Route path="/students/:id" element={<Student/>} />
         <Route path="/courses/:id" element={<Course/>} />
         <Route path="/payments/:id" element={<Payment/>} />
+        <Route path="/students/:id/edit" element={<StudentsUpdate/>} />
+        <Route path="/courses/:id/edit" element={<CoursesUpdate/>} />
+        <Route path="/payments/:id/edit" element={<PaymentsUpdate/>} />
       </Routes>
     </BrowserRouter>
   )
