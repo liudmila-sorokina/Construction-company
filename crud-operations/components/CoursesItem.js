@@ -35,6 +35,7 @@ const deleteCourse = () => {
       {/* добавляем имиджу онклик */}
       <td>
       <img src="crud-operations/svg/pencil-crud.svg" alt="bucket" onClick={deleteCourse} />
+      <Link to={`/courses/${props.id}/edit`} state={props}><img src="crud-operations/svg/pencil-crud.svg" alt="pencil" /></Link>
       </td>
     </tr>
   );
