@@ -1,6 +1,6 @@
 //указываем, что в этот модуль импортируем (в этом модуле он будет доступен) реакт, юзэффектс, юзстате
 
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import InformSearch from "../InformSearch";
 import CoursesItem from "../CoursesItem";
 
@@ -24,52 +24,68 @@ const Courses = () => {
 
   //деструктурирующее присваивание. 
   //стейт это карман, куда мы сохраняем полученные с бекэнда данные это переменная. Сэтстейт нужен, чтобы присваивать что-то стейту.
-  
+
 
   const [state, setState] = useState([]) // я верну массив из 2х элементов. Этот метод - сеттер, его противоположность - геттер - это тот, который только возвращает любую переменную
-  
-  // function useState(arg) {
-  //   let internalState = arg
-  //   const modifyState = (newState) => internalState = newState
+  const [coursesDefault, setCoursesDefault] = useState([])
+  const [sortOrderForvard, setSortOrderForvard] = useState(true)
 
-  //   return [internalState, modifyState]
-  // }
-
+ 
   // let pepe
   // let pepe = {a: 1, b: 2}
-//функция, которая на вход принимает другую функцию 
+  //функция, которая на вход принимает другую функцию 
 
-useEffect(() => {
+  useEffect(() => {
 
-  //передаю аксиусу данные из конфига, чтобы аксиос сделал из них http запрос и отправил на бекэнд
+    //передаю аксиусу данные из конфига, чтобы аксиос сделал из них http запрос и отправил на бекэнд
 
-  axios(config)
+    axios(config)
 
-  //если данные с бекэнда загрузятся, то должно выполнится зэн - это как иф и тогда изменится стейт
-  //стрелочная ананимная функция, не присваиваем ее переменной, так как она сразу идет в работу
+      //если данные с бекэнда загрузятся, то должно выполнится зэн - это как иф и тогда изменится стейт
+      //стрелочная ананимная функция, не присваиваем ее переменной, так как она сразу идет в работу
 
-  .then((respons) => setState(respons.data))
+      .then((respons) => {
+        setState(respons.data)
+        setCoursesDefault(respons.data)
+      })
 
-  //если произойдет ошибка, данные с бекэнда не загрузятся, вывести в консоль ошибку
 
-  .catch((error) => (console.log(error)))
+      //если произойдет ошибка, данные с бекэнда не загрузятся, вывести в консоль ошибку
 
-  //пустые квадратные скобки - это условие, когда юзЭффект вызовет первый аргумент. Первый аргумент - это функция.
-}, [])
+      .catch((error) => (console.log(error)))
+
+    //пустые квадратные скобки - это условие, когда юзЭффект вызовет первый аргумент. Первый аргумент - это функция.
+  }, [])
+
+  const onClickUp = (evt) => {
+    if (sortOrderForvard == true) {
+
+      const coursesArray = [...state]
+      coursesArray.sort((x, y) => x.title > y.title ? 1 : -1)
+      setState(coursesArray)
+    }
+    else {
+      const coursesArray = [...state]
+      coursesArray.sort((x, y) => x.title < y.title ? 1 : -1)
+      setState(coursesArray)
+    }
+
+    setSortOrderForvard(!sortOrderForvard)
+  };
 
   return (
-//jsх - это код, похожий по виду на html. Чтобы вставить сюда js, надо использовать фигурные скобочки.
+    //jsх - это код, похожий по виду на html. Чтобы вставить сюда js, надо использовать фигурные скобочки.
 
     <section className="courses-list">
-      <InformSearch />
+      <InformSearch courses={state} setSearchResalt={setState} coursesDefault={coursesDefault} />
       <div className="students-list__search">
         <h2 className="students-list__title">
           Courses List
         </h2>
         <div className="students-list__buttons-container">
-          <button className="students-list__filter">
-            <img src="./svg/arrows-up-down-crud.svg" alt="arrows up down" />
-          </button>
+
+          <img src="./svg/arrows-up-down-crud.svg" alt="arrows up down" onClick={onClickUp} />
+
           <Link className="students-list__button" to="/courses/new" >ADD NEW COURSE</Link>
         </div>
       </div>
@@ -83,15 +99,15 @@ useEffect(() => {
         </thead>
         <tbody>
 
-         {/* использую метод мап (похоже на forEach), которое позволит пройтись по всем элементам массива, присвоенного стате, и изменить их.
+          {/* использую метод мап (похоже на forEach), которое позволит пройтись по всем элементам массива, присвоенного стате, и изменить их.
          присваиваем пропсам компонента CoursesItem(через математический знак равно) значения, берущиеся из данных, присланных с бекэнда
          пишем в фигурных скобках, так как это js, вставленный в react */}
-          {state.map((course) => <CoursesItem 
-          title={course.title}
-          description={`${course.description.substr(0, 20)}...`}
-          hours={course.how_many_hours}
-          id={course._id}
-          key={course.title}
+          {state.map((course) => <CoursesItem
+            title={course.title}
+            description={`${course.description.substr(0, 20)}...`}
+            hours={course.how_many_hours}
+            id={course._id}
+            key={course.title}
           />)}
 
 
