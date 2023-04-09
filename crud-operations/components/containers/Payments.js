@@ -14,24 +14,50 @@ const config = {
 
 const Payments = () => {
   const [state, setState] = useState([]);
+  //создаю переменную и делаю деструктурирующее присваивание, чтобы с бэкэнда пейментсы сохранялись не только в стате, но и в пейментс дефолт
+  //это нужно, чтобы список пейментсов в стате менялся при поиске, а при пустой строке поиска выдавался неизмененный список пейментсов
+  const [paymentsDefault, setPaymentsDefault] = useState([])
+  const [sortOrderForvard, setSortOrderForvard] = useState(true)
 
   useEffect(() => {
     axios(config)
-      .then((response) => setState(response.data))
+      .then((response) => {
+        setState(response.data)
+        //с помощью фксиоса передаю запрос на бек и получаю список пейментсов
+        //тут с помощью функции зен передаю список в функцию setPaymentsDefault которая меняет переменную-карман paymentsDefault, помещая в нее список пейментсов
+        setPaymentsDefault(response.data)
+      })
       .catch((error) => console.log(error))
   }, [])
 
+  const onClick = (evt) => {
+    if (sortOrderForvard == true) {
+      const paymentsArray = [...state]
+      paymentsArray.sort((x, y) => x.type > y.type ? 1 : -1)
+      setState(paymentsArray)
+    }
+    else {
+      const paymentsArray = [...state]
+      paymentsArray.sort((x, y) => x.type < y.type ? 1 : -1)
+      setState(paymentsArray)
+    }
+
+    setSortOrderForvard(!sortOrderForvard)
+  }
+
+  //добавляю в компонент информСерч новые пропсы, что с их помощью перердать список пейментсов в компонент информСерч
+
   return (
     <section className="payments-list">
-      <InformSearch />
+      <InformSearch payments={state} setSearchResalt={setState} paymentsDefault={paymentsDefault} />
       <div className="students-list__search">
         <h2 className="students-list__title">
           Payment Details
         </h2>
         <div className="students-list__buttons-container">
-          <button className="students-list__filter">
-            <img src="./svg/arrows-up-down-crud.svg" alt="arrows up down" />
-          </button>
+          
+            <img src="./svg/arrows-up-down-crud.svg" alt="arrows up down" onClick={onClick} />
+         
         </div>
       </div>
       <table className="payments-list__table">
