@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios, { isCancel, AxiosError } from "axios";
 import { useLocation } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 
 const StudentsUpdate = () => {
   //деструктурирующее присваивание. Есть функция юзстате, связывающая в своем теле стате и сетстате. Мы не видим это тело. В аргументе функции юзстате пустой обьект. Присваиваем этот пустой массив стате.
@@ -39,6 +40,8 @@ const StudentsUpdate = () => {
   const onClick = (evt) => {
     evt.preventDefault();
 
+    toast("Student updated");
+
     const studentsDataChange = JSON.stringify(state);
 
     const config = {
@@ -74,6 +77,7 @@ const StudentsUpdate = () => {
           <input type="text" name="name" placeholder="name" className="students-form__input" value={state.name} onChange={nameChange} />
         </label>
         <input type="submit" value="submit" name="submit" className="students-form__button" onClick={onClick} />
+        <ToastContainer />
       </form>
     </>
   );

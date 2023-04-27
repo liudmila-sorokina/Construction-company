@@ -34,9 +34,9 @@ const itemsArray = [
   }
 ]
 
-const Menu = () => {
+const Menu = (props) => {
   return (<ul className="sidebar__list">
-    {itemsArray.map((item) => <MenuItem title={item.title} imgpath={item.imgpath} url={item.url} key={item.title} />)}
+    {itemsArray.map((item) => <MenuItem title={item.title} imgpath={item.imgpath} url={item.url} key={item.title} pepa={props.pinguin} />)}
   </ul>);
 };
 

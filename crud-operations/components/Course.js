@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios, { isCancel, AxiosError } from "axios";
 import { useLocation } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 
 
 const Course = () => {

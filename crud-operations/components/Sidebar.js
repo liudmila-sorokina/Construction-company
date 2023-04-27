@@ -7,7 +7,7 @@ const Sidebar = () => {
     <h2 className="sidebar__logo">CRUD OPERATIONS</h2>
     
     <User name="Karthi Madesh" status="Admin" />
-    <Menu />
+    <Menu pinguin="1, 2, 3" />
    
 
     <div className="sidebar__links-container">

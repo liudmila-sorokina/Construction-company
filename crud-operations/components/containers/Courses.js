@@ -11,6 +11,8 @@ import { Link } from "react-router-dom";
 
 //присваиваем переменной конфиг информацию о запросе на бекэнд (то есть то, что мы будем перерсылать на бекэнд: метод, урл-адрес, хедерсы)
 
+import { ToastContainer, toast } from 'react-toastify';
+
 const config = {
   method: 'get',
   url: 'https://users-e87a.restdb.io/rest/courses',
@@ -30,7 +32,8 @@ const Courses = () => {
   const [coursesDefault, setCoursesDefault] = useState([])
   const [sortOrderForvard, setSortOrderForvard] = useState(true)
 
- 
+
+
   // let pepe
   // let pepe = {a: 1, b: 2}
   //функция, которая на вход принимает другую функцию 
@@ -55,6 +58,9 @@ const Courses = () => {
       .catch((error) => (console.log(error)))
 
     //пустые квадратные скобки - это условие, когда юзЭффект вызовет первый аргумент. Первый аргумент - это функция.
+
+
+
   }, [])
 
   const onClickUp = (evt) => {
@@ -63,11 +69,15 @@ const Courses = () => {
       const coursesArray = [...state]
       coursesArray.sort((x, y) => x.title > y.title ? 1 : -1)
       setState(coursesArray)
+
+      toast("This is filter!")
     }
     else {
       const coursesArray = [...state]
       coursesArray.sort((x, y) => x.title < y.title ? 1 : -1)
       setState(coursesArray)
+
+      toast("This is filter!")
     }
 
     setSortOrderForvard(!sortOrderForvard)
@@ -82,11 +92,13 @@ const Courses = () => {
         <h2 className="students-list__title">
           Courses List
         </h2>
+        <div>Deptors</div>
+        <ToastContainer />
         <div className="students-list__buttons-container">
 
           <img src="./svg/arrows-up-down-crud.svg" alt="arrows up down" onClick={onClickUp} />
 
-          <Link className="students-list__button" to="/courses/new" >ADD NEW COURSE</Link>
+          <Link className="students-list__button" to="/courses/new">ADD NEW COURSE</Link>
         </div>
       </div>
       <table className="courses-list__table">
