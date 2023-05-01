@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import InformSearch from "../InformSearch";
 import PaymentsItem from "../PaymentsItem";
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
 
 const config = {
   method: 'get',
@@ -28,18 +29,28 @@ const Payments = () => {
         setPaymentsDefault(response.data)
       })
       .catch((error) => console.log(error))
+
+    return () => {
+      alert("Goodbye!")
+    }
+
   }, [])
+
 
   const onClick = (evt) => {
     if (sortOrderForvard == true) {
       const paymentsArray = [...state]
       paymentsArray.sort((x, y) => x.type > y.type ? 1 : -1)
       setState(paymentsArray)
+
+      toast("Payment's filter");
     }
     else {
       const paymentsArray = [...state]
       paymentsArray.sort((x, y) => x.type < y.type ? 1 : -1)
       setState(paymentsArray)
+
+      toast("Payment's filter");
     }
 
     setSortOrderForvard(!sortOrderForvard)
@@ -49,15 +60,17 @@ const Payments = () => {
 
   return (
     <section className="payments-list">
+
       <InformSearch payments={state} setSearchResalt={setState} paymentsDefault={paymentsDefault} />
       <div className="students-list__search">
         <h2 className="students-list__title">
           Payment Details
         </h2>
+        <div>Deptors</div>
         <div className="students-list__buttons-container">
-          
-            <img src="./svg/arrows-up-down-crud.svg" alt="arrows up down" onClick={onClick} />
-         
+
+          <img src="./svg/arrows-up-down-crud.svg" alt="arrows up down" onClick={onClick} />
+          <ToastContainer />
         </div>
       </div>
       <table className="payments-list__table">
@@ -72,9 +85,10 @@ const Payments = () => {
             <th className="payments-list__table-head"></th>
           </tr>
         </thead>
+        {console.log(state)}
         <tbody>
           {state.map((payment) => <PaymentsItem
-            name={payment.student && payment.student[0].name}
+            name={payment.student && payment.student[0] && payment.student[0].name}
             paymentSchedule={payment.payment_schedule}
             bill={payment.bill}
             amount={payment.amount}

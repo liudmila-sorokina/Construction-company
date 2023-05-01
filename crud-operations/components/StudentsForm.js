@@ -1,10 +1,13 @@
 import React from "react";
 import axios, { isCancel, AxiosError } from "axios";
+import { ToastContainer, toast } from "react-toastify";
 
 const StudentsForm = () => {
 
   const onClick = (evt) => {
     evt.preventDefault();
+
+    toast("added new student");
 
     const studentsEmail = document.querySelector('[name="email"]').value;
     const studentsPhone = document.querySelector('[name="phone"]').value;
@@ -52,6 +55,7 @@ const StudentsForm = () => {
           <input type="text" name="name" placeholder="name" className="students-form__input" />
         </label>
         <input type="submit" value="submit" name="submit" className="students-form__button" onClick={onClick} />
+        <ToastContainer />
       </form>
     </>
   );

@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
 
 
 
@@ -15,16 +16,17 @@ const StudentsItem = (props) => {
   };
 
   const deleteStudent = () => {
-   
-      axios(config)
-        .then((response) => console.log(response.data))
-        .catch((error) => console.log(error))
-    
+
+    axios(config)
+      .then((response) => console.log(response.data))
+      .catch((error) => console.log(error))
+
+    toast("deleted a student");
   };
 
-  
+
   return (
-//jsx надстройка реакта над джаваскриптом
+    //jsx надстройка реакта над джаваскриптом
     <tr className="students-list__table-row">
       <td className="students-list__table-data"><img src={props.photopath} className="students-list__photo" /></td>
       <td className="students-list__table-data"><Link to={`/students/${props.id}`}>{props.name}</Link></td>
@@ -33,8 +35,9 @@ const StudentsItem = (props) => {
       <td className="students-list__table-data">{props.number}</td>
       <td className="students-list__table-data">{props.date}</td>
       <td className="students-list__table-data">
-       <Link to={`/students/${props.id}/edit`} state={props}><img src="crud-operations/svg/pencil-crud.svg" alt="pencil" /></Link> 
+        <Link to={`/students/${props.id}/edit`} state={props}><img src="crud-operations/svg/pencil-crud.svg" alt="pencil" /></Link>
         <img src="crud-operations/svg/pencil-crud.svg" alt="bucket" onClick={deleteStudent} />
+        <ToastContainer />
       </td>
     </tr>
 

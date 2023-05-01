@@ -6,6 +6,7 @@ const MenuItem = (props) => {
     <li className="sidebar__item">
       <img src={props.imgpath} alt="house" className="sidebar__img" />
       <Link className="sidebar__link" to={props.url}>{props.title}</Link>
+      <div>{props.pepa}</div>
     </li>
   );
 };

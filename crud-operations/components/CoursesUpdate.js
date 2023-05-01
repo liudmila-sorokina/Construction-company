@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios, { isCancel, AxiosError } from "axios";
 import { useLocation } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 
 const CoursesUpdate = () => {
   const [state, setState] = useState({});
@@ -31,6 +32,8 @@ const CoursesUpdate = () => {
 
   const onClick = (evt) => {
     evt.preventDefault();
+
+    toast("course updated");
 
     const obj = {}
     obj.title = state.title
@@ -70,6 +73,7 @@ const CoursesUpdate = () => {
           <input type="number" name="hours" placeholder="hours" className="students-form__input" value={state.hours} onChange={hoursChange} />
         </label>
         <input type="submit" value="submit" name="submit" className="students-form__button" onClick={onClick} />
+        <ToastContainer />
       </form>
     </>
   );

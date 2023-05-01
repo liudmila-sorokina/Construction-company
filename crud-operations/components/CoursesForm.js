@@ -1,5 +1,6 @@
 import React from "react";
 import axios, { isCancel, AxiosError } from "axios";
+import { ToastContainer, toast } from 'react-toastify';
 
 const CoursesForm = () => {
 
@@ -16,6 +17,8 @@ const CoursesForm = () => {
       description: coursesDescription,
       how_many_hours: coursesHourses
     });
+
+    toast("Added new course!")
 
     const config = {
       method: 'post',
@@ -39,6 +42,7 @@ const CoursesForm = () => {
   return (
     <>
       <h1>Create new course</h1>
+      <ToastContainer />
       <form className="students-form" action="#" method="post">
         <label className="students-form__label">
           title

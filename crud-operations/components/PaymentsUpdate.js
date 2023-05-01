@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useLocation } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 
 const PaymentsUpdate = () => {
   const [state, setState] = useState({});
@@ -46,6 +47,8 @@ const PaymentsUpdate = () => {
 
   const onClick = (evt) => {
     evt.preventDefault();
+
+    toast("Payment updated");
 
     const obj = {}
     obj.created_at = state.data
@@ -103,6 +106,7 @@ const PaymentsUpdate = () => {
           <input type="date" name="date" placeholder="Date" className="students-form__input" value={state.data} onChange={dataChange} />
         </label>
         <input type="submit" value="submit" name="submit" className="students-form__button" onClick={onClick} />
+        <ToastContainer />
       </form>
     </>
   );
