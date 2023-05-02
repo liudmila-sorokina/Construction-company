@@ -6,6 +6,7 @@ import { ToastContainer, toast } from "react-toastify";
 
 
 const StudentsItem = (props) => {
+
   const config = {
     method: 'delete',
     url: `https://users-e87a.restdb.io/rest/students/${props.id}`,
@@ -22,6 +23,9 @@ const StudentsItem = (props) => {
       .catch((error) => console.log(error))
 
     toast("deleted a student");
+
+    const newState = props.students.filter(student => student._id !== props.id);
+    props.setStudents(newState);
   };
 
 

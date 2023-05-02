@@ -27,6 +27,9 @@ const CoursesItem = (props) => {
       .catch((error) => console.log(error))
 
     toast("Deleted course.");
+
+    const newState = props.courses.filter(course => course._id !== props.id);
+    props.setCourses(newState);
   };
 
   return (
@@ -39,7 +42,8 @@ const CoursesItem = (props) => {
       {/* добавляем имиджу онклик */}
       <td>
         <img src="crud-operations/svg/pencil-crud.svg" alt="bucket" onClick={deleteCourse} />
-        <Link to={`/courses/${props.id}/edit`} state={props}><img src="crud-operations/svg/pencil-crud.svg" alt="pencil" /></Link>
+        {console.log('PROPSEIO:', props)}
+        <Link to={`/courses/${props.id}/edit`} state={{ ...props }}><img src="crud-operations/svg/pencil-crud.svg" alt="pencil" /></Link>
       </td>
     </tr>
   );
