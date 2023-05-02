@@ -120,6 +120,8 @@ const Courses = () => {
             hours={course.how_many_hours}
             id={course._id}
             key={course.title}
+            courses={state}
+            setCourses={setState}
           />)}
 
 

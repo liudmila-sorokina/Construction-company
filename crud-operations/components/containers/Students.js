@@ -107,7 +107,7 @@ const Students = (props) => {
           <StudentsItem name="Name" email="Email" phone="Phone" number="Enroll Number" date="Date of admission" />
         </thead>
         <tbody>
-          {state && state.map((student) => <StudentsItem photopath="#" name={student.name} email={student.email} phone={student.phone} number={student.number} date={student.date} key={student.name} id={student._id} />)}
+          {state && state.map((student) => <StudentsItem photopath="#" name={student.name} email={student.email} phone={student.phone} number={student.number} date={student.date} key={student.name} id={student._id} students={state} setStudents={setState} />)}
         </tbody>
       </table>
     </section>

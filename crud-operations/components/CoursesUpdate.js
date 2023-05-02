@@ -8,6 +8,7 @@ const CoursesUpdate = () => {
   const location = useLocation()
 
   useEffect(() => {
+    console.log('LOCATIO132: ', location)
     setState(location.state)
   }, []);
 
