@@ -1,17 +1,14 @@
-//указываем, что в этот модуль импортируем (в этом модуле он будет доступен) реакт, юзэффектс, юзстате
-
 import React, { useEffect, useState } from "react";
 import InformSearch from "../InformSearch";
 import CoursesItem from "../CoursesItem";
-
-//импортируем в этот модуль библиотеку аксиос, которая поможет потом нам передать запрос бекэнду
-
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-//присваиваем переменной конфиг информацию о запросе на бекэнд (то есть то, что мы будем перерсылать на бекэнд: метод, урл-адрес, хедерсы)
+import { useDispatch, useSelector } from "react-redux";
 
 import { ToastContainer, toast } from 'react-toastify';
+
+import { ADD_COURSES } from "../../actions/constants"
 
 const config = {
   method: 'get',
@@ -24,58 +21,37 @@ const config = {
 
 const Courses = () => {
 
-  //деструктурирующее присваивание. 
-  //стейт это карман, куда мы сохраняем полученные с бекэнда данные это переменная. Сэтстейт нужен, чтобы присваивать что-то стейту.
-
-
-  const [state, setState] = useState([]) // я верну массив из 2х элементов. Этот метод - сеттер, его противоположность - геттер - это тот, который только возвращает любую переменную
   const [coursesDefault, setCoursesDefault] = useState([])
   const [sortOrderForvard, setSortOrderForvard] = useState(true)
 
-
-
-  // let pepe
-  // let pepe = {a: 1, b: 2}
-  //функция, которая на вход принимает другую функцию 
+  const dispatch = useDispatch()
+  const courses = useSelector((store) => store.courses)
 
   useEffect(() => {
 
-    //передаю аксиусу данные из конфига, чтобы аксиос сделал из них http запрос и отправил на бекэнд
-
     axios(config)
 
-      //если данные с бекэнда загрузятся, то должно выполнится зэн - это как иф и тогда изменится стейт
-      //стрелочная ананимная функция, не присваиваем ее переменной, так как она сразу идет в работу
-
       .then((respons) => {
-        setState(respons.data)
+        const addCoursesAction = { type: ADD_COURSES, payload: respons.data}
+        dispatch(addCoursesAction)
         setCoursesDefault(respons.data)
       })
 
-
-      //если произойдет ошибка, данные с бекэнда не загрузятся, вывести в консоль ошибку
-
       .catch((error) => (console.log(error)))
-
-    //пустые квадратные скобки - это условие, когда юзЭффект вызовет первый аргумент. Первый аргумент - это функция.
-
-
-
   }, [])
 
   const onClickUp = (evt) => {
     if (sortOrderForvard == true) {
-
-      const coursesArray = [...state]
+      const coursesArray = [...courses]
       coursesArray.sort((x, y) => x.title > y.title ? 1 : -1)
-      setState(coursesArray)
+      dispatch({type: ADD_COURSES, payload: coursesArray})
 
       toast("This is filter!")
     }
     else {
-      const coursesArray = [...state]
+      const coursesArray = [...courses]
       coursesArray.sort((x, y) => x.title < y.title ? 1 : -1)
-      setState(coursesArray)
+      dispatch({type: ADD_COURSES, payload: coursesArray})
 
       toast("This is filter!")
     }
@@ -84,10 +60,8 @@ const Courses = () => {
   };
 
   return (
-    //jsх - это код, похожий по виду на html. Чтобы вставить сюда js, надо использовать фигурные скобочки.
 
     <section className="courses-list">
-      <InformSearch courses={state} setSearchResalt={setState} coursesDefault={coursesDefault} />
       <div className="students-list__search">
         <h2 className="students-list__title">
           Courses List
@@ -111,23 +85,14 @@ const Courses = () => {
         </thead>
         <tbody>
 
-          {/* использую метод мап (похоже на forEach), которое позволит пройтись по всем элементам массива, присвоенного стате, и изменить их.
-         присваиваем пропсам компонента CoursesItem(через математический знак равно) значения, берущиеся из данных, присланных с бекэнда
-         пишем в фигурных скобках, так как это js, вставленный в react */}
-          {state.map((course) => <CoursesItem
+          {courses.map((course) => <CoursesItem
             title={course.title}
             description={`${course.description.substr(0, 20)}...`}
             hours={course.how_many_hours}
             id={course._id}
             key={course.title}
-            courses={state}
-            setCourses={setState}
           />)}
-
-
-          {/*<CoursesItem title="Maths" description="deep course" hours="130h" />
-          <CoursesItem title="Maths" description="deep course" hours="130h" />
-  <CoursesItem title="Maths" description="deep course" hours="130h" />*/}
+          
         </tbody>
       </table>
     </section>

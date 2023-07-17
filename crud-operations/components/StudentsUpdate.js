@@ -4,23 +4,16 @@ import { useLocation } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 
 const StudentsUpdate = () => {
-  //деструктурирующее присваивание. Есть функция юзстате, связывающая в своем теле стате и сетстате. Мы не видим это тело. В аргументе функции юзстате пустой обьект. Присваиваем этот пустой массив стате.
   const [state, setState] = useState({});
-
-
-  //присваиваем переменной хук юзлокатион, чтобы использовать ее впоследствии для вычленения id студента
   const location = useLocation()
 
   useEffect(() => {
     setState(location.state)
   }, []);
 
-
   const temp = location.pathname.replace('/students/', '')
 
   const studentId = temp.replace('/edit', '')
-
-
 
   const emailChange = (evt) => {
     const newState = { ...state, email: evt.target.value }
@@ -53,8 +46,6 @@ const StudentsUpdate = () => {
       },
       data: studentsDataChange
     };
-
-
 
     axios(config)
       .then((response) => console.log(response.data))

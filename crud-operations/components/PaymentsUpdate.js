@@ -78,7 +78,6 @@ const PaymentsUpdate = () => {
   }
 
   return (
-    //JSX - выглядит, как html
     <>
       <form className="students-form" action="#" method="put">
         <label className="students-form__label">
