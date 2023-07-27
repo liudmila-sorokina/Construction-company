@@ -3,11 +3,8 @@ import InformSearch from "../InformSearch";
 import StudentsItem from "../StudentsItem";
 import axios, { isCancel, AxiosError } from "axios";
 import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
 
 import { ToastContainer, toast } from "react-toastify";
-
-import { ADD_STUDENTS } from '../../actions/constants'
 
 const config = {
   method: 'get',
@@ -19,34 +16,31 @@ const config = {
 };
 
 const Students = (props) => {
+  const [state, setState] = useState([]);
   const [studentsDefault, setStudentsDefault] = useState([]);
   const [sortOrderForvard, setSortOrderForvard] = useState(true);
-  const dispatch = useDispatch()
-  const students = useSelector((store) => store.students)
 
   useEffect(() => {
     axios(config)
       .then((response) => {
-        const addStudentsAction = {type: ADD_STUDENTS, payload: response.data}
-        dispatch(addStudentsAction)
+        setState(response.data)
         setStudentsDefault(response.data)
       })
       .catch((error) => console.log(error))
-
   }, [])
 
   const onClick = (evt) => {
     if (sortOrderForvard == true) {
-      const studentsArray = [...students];
+      const studentsArray = [...state];
       studentsArray.sort((x, y) => x.name > y.name ? 1 : -1);
-      dispatch({type: ADD_STUDENTS, payload: studentsArray})
+      setState(studentsArray);
 
       toast("This is students's filter");
     }
     else {
-      const studentsArray = [...students];
+      const studentsArray = [...state];
       studentsArray.sort((x, y) => x.name < y.name ? 1 : -1);
-      dispatch({type: ADD_STUDENTS, payload: studentsArray})
+      setState(studentsArray);
 
       toast("This is students's filter");
     }
@@ -57,6 +51,7 @@ const Students = (props) => {
 
   return (
     <section className="students-list">
+      <InformSearch students={state} setSearchResalt={setState} studentsDefault={studentsDefault} value3={props.value2} />
       <div className="students-list__search">
         <h2 className="students-list__title">
           Students List
@@ -74,7 +69,7 @@ const Students = (props) => {
           <StudentsItem name="Name" email="Email" phone="Phone" number="Enroll Number" date="Date of admission" />
         </thead>
         <tbody>
-          {students && students.map((student) => <StudentsItem photopath="#" name={student.name} email={student.email} phone={student.phone} number={student.number} date={student.date} key={student.name} id={student._id}/>)}
+          {state && state.map((student) => <StudentsItem photopath="#" name={student.name} email={student.email} phone={student.phone} number={student.number} date={student.date} key={student.name} id={student._id} students={state} setStudents={setState} />)}
         </tbody>
       </table>
     </section>
