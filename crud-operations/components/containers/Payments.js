@@ -4,6 +4,10 @@ import PaymentsItem from "../PaymentsItem";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 
+import { useDispatch, useSelector } from "react-redux";
+
+import { ADD_PAYMENTS } from "../../actions/constants"
+
 const config = {
   method: 'get',
   url: 'https://users-e87a.restdb.io/rest/payments',
@@ -14,18 +18,17 @@ const config = {
 };
 
 const Payments = () => {
-  const [state, setState] = useState([]);
-  //создаю переменную и делаю деструктурирующее присваивание, чтобы с бэкэнда пейментсы сохранялись не только в стате, но и в пейментс дефолт
-  //это нужно, чтобы список пейментсов в стате менялся при поиске, а при пустой строке поиска выдавался неизмененный список пейментсов
   const [paymentsDefault, setPaymentsDefault] = useState([])
   const [sortOrderForvard, setSortOrderForvard] = useState(true)
+
+  const dispatch = useDispatch()
+  const payments = useSelector((store) => store.payments)
 
   useEffect(() => {
     axios(config)
       .then((response) => {
-        setState(response.data)
-        //с помощью фксиоса передаю запрос на бек и получаю список пейментсов
-        //тут с помощью функции зен передаю список в функцию setPaymentsDefault которая меняет переменную-карман paymentsDefault, помещая в нее список пейментсов
+       const addPaymentsAction = {type: ADD_PAYMENTS, payload: response.data }
+       dispatch(addPaymentsAction)
         setPaymentsDefault(response.data)
       })
       .catch((error) => console.log(error))
@@ -39,16 +42,16 @@ const Payments = () => {
 
   const onClick = (evt) => {
     if (sortOrderForvard == true) {
-      const paymentsArray = [...state]
+      const paymentsArray = [...payments]
       paymentsArray.sort((x, y) => x.type > y.type ? 1 : -1)
-      setState(paymentsArray)
+      dispatch({type: ADD_PAYMENTS, payload: paymentsArray})
 
       toast("Payment's filter");
     }
     else {
-      const paymentsArray = [...state]
+      const paymentsArray = [...payments]
       paymentsArray.sort((x, y) => x.type < y.type ? 1 : -1)
-      setState(paymentsArray)
+      dispatch({type: ADD_PAYMENTS, payload: paymentsArray})
 
       toast("Payment's filter");
     }
@@ -56,12 +59,10 @@ const Payments = () => {
     setSortOrderForvard(!sortOrderForvard)
   }
 
-  //добавляю в компонент информСерч новые пропсы, что с их помощью перердать список пейментсов в компонент информСерч
 
   return (
     <section className="payments-list">
 
-      <InformSearch payments={state} setSearchResalt={setState} paymentsDefault={paymentsDefault} />
       <div className="students-list__search">
         <h2 className="students-list__title">
           Payment Details
@@ -85,9 +86,9 @@ const Payments = () => {
             <th className="payments-list__table-head"></th>
           </tr>
         </thead>
-        {console.log(state)}
+       
         <tbody>
-          {state.map((payment) => <PaymentsItem
+          {payments.map((payment) => <PaymentsItem
             name={payment.student && payment.student[0] && payment.student[0].name}
             paymentSchedule={payment.payment_schedule}
             bill={payment.bill}

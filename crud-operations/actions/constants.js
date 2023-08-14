@@ -1,0 +1,8 @@
+export const ADD_STUDENTS = 'ADD_STUDENTS'
+export const DELETE_STUDENT = 'DELETE_STUDENT'
+export const ADD_STUDENT = 'ADD_STUDENT'
+export const ADD_COURSES = 'ADD_COURSES'
+export const ADD_COURSE = 'ADD_COURSE'
+export const DELETE_COURSE = 'DELETE_COURSE'
+export const ADD_PAYMENTS = 'ADD_PAYMENTS'
+export const ADD_PAYMENT = 'ADD_PAYMENT'

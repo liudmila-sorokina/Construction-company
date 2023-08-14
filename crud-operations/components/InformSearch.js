@@ -38,18 +38,13 @@ const InformSearch = (props) => {
         props.setSearchResalt(props.coursesDefault)
       }
     }
-    //добавляю новое условие, для начала указав, что условие должно сработать, когда в этот компонент будет перердан список пейментсов
 
     if (props.payments) {
-      //если содержимое поля поиска НЕ пустая строка, то выполнить функцию: filter и math
-      //вспомнить, что это за методы
       if (evt.target.value !== "") {
         console.log(evt.target.value)
 
         const searchPayments = props.payments.filter((paymentsObj) => paymentsObj.student && paymentsObj.student[0].name.match(new RegExp(evt.target.value)))
         props.setSearchResalt(searchPayments)
-
-
       }
       else {
         props.setSearchResalt(props.paymentsDefault)
@@ -57,7 +52,6 @@ const InformSearch = (props) => {
     }
 
   }
-  //в инпуте поиска стоит обработчик событий ончандж
 
   return (
     <div className="information__forms-container">

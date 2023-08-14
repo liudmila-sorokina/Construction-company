@@ -3,9 +3,14 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 
+import { useDispatch, useSelector } from "react-redux";
 
+import { DELETE_STUDENT } from "../actions/constants"
 
 const StudentsItem = (props) => {
+
+  const dispatch = useDispatch()
+  const student = useSelector((store) => store.student)
 
   const config = {
     method: 'delete',
@@ -17,20 +22,18 @@ const StudentsItem = (props) => {
   };
 
   const deleteStudent = () => {
-
     axios(config)
-      .then((response) => console.log(response.data))
-      .catch((error) => console.log(error))
+    .then((response) => {
+      const deleteStudentAction = {type: DELETE_STUDENT, payload: props.id}
+       dispatch(deleteStudentAction)
+    })
+    .catch((error) => console.log(error))
 
     toast("deleted a student");
 
-    const newState = props.students.filter(student => student._id !== props.id);
-    props.setStudents(newState);
   };
 
-
   return (
-    //jsx надстройка реакта над джаваскриптом
     <tr className="students-list__table-row">
       <td className="students-list__table-data"><img src={props.photopath} className="students-list__photo" /></td>
       <td className="students-list__table-data"><Link to={`/students/${props.id}`}>{props.name}</Link></td>

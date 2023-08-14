@@ -1215,3 +1215,10 @@ input {
 .invisible {
   display: none;
 }
+
+.delete-button {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #d7373b;
+}

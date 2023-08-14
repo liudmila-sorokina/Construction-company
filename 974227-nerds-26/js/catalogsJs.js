@@ -178,8 +178,8 @@ examples.addEventListener("click", function (evn) {
   const parent = evn.target.parentElement
   const product = parent.querySelector(".examples__item").textContent
 
-  document.cookie = `productNames=${product}`
-
-  console.log(parent)
-  console.log(parent.querySelector(".examples__item").textContent)
+  const cookies = document.cookie.split(';').map(item => item.split('=')).reduce((acc, [k, v]) => (acc[k.trim().replace('"', '')] = v) && acc, {});
+  if (cookies.productNames === undefined || cookies.productNames.indexOf(product) === -1) {
+    document.cookie = `productNames=${cookies.productNames},${product}`
+  }
 })
