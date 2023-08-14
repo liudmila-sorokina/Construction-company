@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <title>HTML Academy: Нёрдс</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap&subset=cyrillic"
+    rel="stylesheet">
+</head>
+
+<body class="inner-page">
+  <header>
+    <nav aria-label="меню" class="main-header container">
+
+      <a class="logo-nerds" href="catalog.html">
+        <img src="img/nerds-logo.svg" alt="логотип нердс" class="nerds-logo-svg">
+      </a>
+
+      <ul class="menu">
+        <li><a href="./index.html" class="menu__item">студия</a></li>
+        <li><a href="./index.html#clients" class="menu__item">клиенты</a></li>
+        <li><a href="./catalog.html" class="menu__item menu__item_active">магазин</a></li>
+        <li><a href="#contact-info" class="menu__item">контакты</a></li>
+      </ul>
+
+      <ul class="menu">
+        <li>
+          <a href="./bag.html" class="menu__item menu__item_cart"><span>корзина</span></a>
+        </li>
+
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <!-- <section class="catalog"> -->
+    <div class="catalog-header">
+      <!-- <div class="container"> -->
+      <!-- <h1 class="visually-hidden">Выбор шаблонов</h1> -->
+
+      <h1 class="page-title">Магазин готовых шаблонов</h1>
+      <!-- </div> -->
+    </div>
+    <!-- <div class="container"> -->
+    <div class="catalog-columns">
+      <section class="catalog__filter">
+
+        <!-- <h2 class="visually-hidden">Фильтр</h2> -->
+        <h2 class="filter-title filter-title-custom-cost">Стоимость:</h2>
+        <form class="filter" method="GET" action="#">
+          
+          <!-- <div class="custom">
+                <div class="custom-relative">
+                  <div class="green-straight"></div>
+                </div>
+                <button class="custom-button custom-button-begin">
+                </button>
+                <button class="custom-button custom-button-end"></button>
+              </div> -->
+              <input type="range" id="custom-range" name="custom-range" min="0" max="20000">
+          <fieldset>
+           
+            <label for="from" class="filter-text-word">от</label>
+            <input id="from" class="filter-text" type="text" name="from" value="0">
+
+            <label for="to" class="filter-text-word">до</label>
+            <input id="to" class="filter-text" type="text" name="to" value="15000">
+         
+          </fieldset>
+          <!-- <fieldset class="filter-fieldset">
+            <legend class="filter-title">сетка:</legend>
+            <ul class="no-margin">
+              <li class="filter__item-li">
+                <input id="adaptiv" class="filter__item-radio visually-hidden" type="radio" name="grid" value="a1"
+                  checked>
+                <label for="adaptiv" class="filter__item">Адаптивная</label>
+              </li>
+              <li class="filter__item-li">
+                <input id="fixed" class="filter__item-radio visually-hidden" type="radio" name="grid" value="a2">
+                <label for="fixed" class="filter__item">Фиксированная</label>
+              </li>
+              <li class="filter__item-li">
+                <input id="rubber" class="filter__item-radio visually-hidden" type="radio" name="grid" value="a3">
+                <label for="rubber" class="filter__item">Резиновая</label>
+              </li>
+            </ul>
+          </fieldset> -->
+          <fieldset class="filter-fieldset">
+            <legend class="filter-title">особенности:</legend>
+            <ul class="no-margin">
+              <li class="filter__item-li">
+                <input class="filter__item-check visually-hidden" id="slider" type="checkbox" name="slider">
+                <label for="slider" class="filter__item">Слайдер</label>
+              </li>
+              <li class="filter__item-li">
+                <input class="filter__item-check visually-hidden" id="benefits-blok" type="checkbox" name="advantages">
+                <label for="benefits-blok" class="filter__item">Блок преимуществ</label>
+              </li>
+              <li class="filter__item-li">
+                <input class="filter__item-check visually-hidden" id="news" type="checkbox" name="news">
+                <label for="news" class="filter__item">Новости</label>
+              </li>
+              <li class="filter__item-li">
+                <input class="filter__item-check visually-hidden" id="gallery" type="checkbox" name="gallery">
+                <label for="gallery" class="filter__item">Галерея</label>
+              </li>
+              <li class="filter__item-li">
+                <input class="filter__item-check visually-hidden" id="bag" type="checkbox" name="basket">
+                <label for="bag" class="filter__item">Корзина</label>
+              </li>
+            </ul>
+
+          </fieldset>
+          
+          <div class="filter-button all-button" type="submit" href="#">показать</div>
+        </form>
+      </section>
+      <section class="catalog__products">
+        <!-- <section class="catalog__prise"> -->
+
+        <section class="product-selection">
+          <h3 class="filter-title filter-subtitle">сортировать:</h3>
+          <ul class="catalog__filters">
+            <li class="catalog__filter-item chosen items-cost"><!-- <button class="all-button" tabindex="1"> -->по цене</li>
+            <li class="catalog__filter-item items-type"><!-- <button class="all-button" tabindex="2"> --> по типу</li>
+            <li class="catalog__filter-item items-name"><!-- <button class="all-button  " tabindex="3"> --> по названию</li>
+          </ul>
+          <div class='arrows-container'>
+            <button type="button" class="arrow all-button chosen"><img src="img/icon-down-dir.svg" alt="стрелка вниз"
+                class="img-arrow"></button>
+            <button type="button" class="arrow all-button"><img src="img/icon-up-dir.svg" alt="стрелка вверх"
+                class="img-arrow"></button>
+          </div>
+        </section>
+        <!-- </section> -->
+        <!-- <section class="catalog__items"> -->
+        <ul class="examples">
+          <li class="for-examples-item item-sedona"><a href="#" class="picture-relative">
+              <div class="two-img">
+                <img class="browser-png" src="img/browser.png" alt="sedona1">
+                <img src="img/img-sedona.jpg" alt="sedona" class="img-different-jpg">
+              </div>
+              <section class="information-block">
+                <h3 class="examples__item">sedona</h3>
+                <p class="examples__text">информационный сайт для туристов</p>
+              
+                <div class="examples__prise all-button">9900</div>
+              
+              </section>
+            </a></li>
+          <li class="for-examples-item item-pink"><a href="#" class="picture-relative">
+              <div class="two-img">
+                <img class="browser-png" src="img/browser.png" alt="pink1">
+                <img src="img/img-pink.jpg" alt="pink" class="img-different-jpg">
+              </div>
+              <section class="information-block">
+                <h3 class="examples__item">pink</h3>
+                <p class="examples__text">Интернет магазин девайсов</p>
+                <div class="examples__prise all-button">9800</div>
+              </section>
+            </a></li>
+          <li class="for-examples-item item-borodinski"><a href="#" class="picture-relative">
+              <div class="two-img">
+                <img class="browser-png" src="img/browser.png" alt="borodinski1">
+                <img src="img/img-barbershop.jpg" alt="borodinski" class="img-different-jpg">
+              </div>
+              <section class="information-block">
+                <h3 class="examples__item">borodinski</h3>
+                <p class="examples__text">современный барбершоп</p>
+                <div class="examples__prise all-button">9700</div>
+              </section>
+            </a></li>
+          <li class="for-examples-item item-mishka"><a href="#" class="picture-relative">
+              <div class="two-img">
+                <img class="browser-png" src="img/browser.png" alt="mishka1">
+                <img src="img/img-mishka.jpg" alt="mishka" class="img-different-jpg">
+              </div>
+              <section class="information-block">
+                <h3 class="examples__item">mishka</h3>
+                <p class="examples__text">магазин товаров ручной работы</p>
+                <div class="examples__prise all-button">10000</div>
+              </section>
+            </a></li>
+          <li class="for-examples-item item-A"><a href="#" class="picture-relative">
+              <div class="two-img">
+                <img class="browser-png" src="img/browser.png" alt="A+1">
+                <img src="img/img-aplus.jpg" alt="A+" class="img-different-jpg">
+              </div>
+              <section class="information-block">
+                <h3 class="examples__item">A+</h3>
+                <p class="examples__text">онлайн курсы</p>
+                <div class="examples__prise all-button">19500</div>
+              </section>
+            </a></li>
+          <li class="for-examples-item item-kvast"><a href="#" class="picture-relative">
+              <div class="two-img">
+                <img class="browser-png" src="img/browser.png" alt="кваст1">
+                <img src="img/img-kvast.jpg" alt="кваст" class="img-different-jpg">
+              </div>
+              <section class="information-block">
+                <h3 class="examples__item">кваст</h3>
+                <p class="examples__text">магазин крафтового кваса</p>
+                <div class="examples__prise all-button">9400</div>
+              </section>
+            </a></li>
+        </ul>
+        <!-- </section> -->
+        <!-- <section class="container"> -->
+        <ul class="pagination-list">
+          <li class="pagination-item pagination-item-current"><a>1</a></li>
+          <li class="pagination-item"><a href="#">2</a></li>
+          <li class="pagination-item"><a href="#">3</a></li>
+          <li class="pagination-item pagination-item-next"><a href="#">следующая</a></li>
+        </ul>
+        <!-- </section> -->
+      </section>
+    </div>
+    <!-- </div> -->
+    <!-- </section> -->
+
+    <section class="container map-container" id="contact-info">
+      <h2 class="visually-hidden">контакты</h2>
+      <img src="img/map.jpg" alt="карта" class="big-map">
+      <img src="img/map-marker.png" alt="логотип" class="map-marker">
+      <div class="address">
+        <h3 class="address__subtitle">NЁRDS DESIGN STUDIO</h3>
+        <p class="address__text">191186, Санкт-Петербург,<br>
+          ул. Б. Конюшенная, д. 19/8</p>
+        <p class="address-phone">тел. +7 (812) 275-75-75</p>
+        <button class="slider-button address-button all-button">напишите нам</button>
+      </div>
+    </section>
+
+
+    <form action="https://nerds.ru" method="get" class="personal-data nerds-form">
+      <!-- <section class="nerds-form"> -->
+      <div class="about-us__header">
+        <h3 class="about-us__title">Напишите нам</h3>
+        <button class="close-cross all-button" type="button"><img src="img/close-cross.svg" alt="cross"
+            class="cross-close-svg"></button>
+      </div>
+      <div class="about-us__horizontal-container">
+        <div>
+          <label class="for-form" for="user-name">Ваше имя:</label>
+          <input class="input-form invalid" id="user-name" placeholder="Имя Фамилия" type="text" name="username">
+        </div>
+        <div>
+          <label class="for-form" for="user-mail">Ваш email:</label>
+          <input class="input-form" id="user-mail" placeholder="email.example.com" type="text" name="mail">
+        </div>
+      </div>
+      <div class="about-us__vertical-container">
+        <label class="for-form" for="user-text">Текст сообщения:</label>
+        <textarea class="input-form input-form__textarea" id="user-text" placeholder="В свободной форме"
+          name="text-mail"></textarea>
+      </div>
+
+
+      <button type="submit" class="slider-button all-button slider-button-form">отправить</button>
+      <!-- </section> -->
+    </form>
+  </main>
+  <footer class="footer-main container">
+    <ul class="footer-social">
+      <li><a class="social-network" href="#" aria-label="ссылка на страницу нёрдс во в контакте"><img
+            src="img/vk-icon.svg" alt="иконка вконтакте" class="all-icon-svg"></a></li>
+      <li><a class="social-network" href="#" aria-label="ссылка на страницу нёрдс в фейсбук"><img src="img/fb-icon.svg"
+            alt="иконка фейсбук" class="all-icon-svg"></a></li>
+      <li><a class="social-network" href="#" aria-label="ссылка на страницу нёрдс в инсаграмм"><img
+            src="img/insta-icon.svg" alt="иконка инстаграмм" class="all-icon-svg"></a></li>
+    </ul>
+    <div class="footer-text">
+      <p class="make-friends">Давайте дружить, это выгодно!</p>
+      <p class="make-friends__subtitle">Скидка 10% для друзей из социальных сетей.</p>
+    </div>
+  </footer>
+
+
+
+</body>
+<script src="./js/catalogsJs.js"></script>
+</html>
