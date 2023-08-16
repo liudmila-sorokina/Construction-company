@@ -5,20 +5,20 @@ const thierdSlide = document.querySelector(".thierd-slide")
 
 let slideActive = document.querySelector(".img-phons")
 
-firstSlide.addEventListener("click", function (evt){
-  // const imageFirst = document.createElement("img")
+firstSlide.addEventListener("click", function (evt) {
+
   slideActive.src = "./img/slide1.png"
-  // slideActive = imageFirst
+
 })
 
-secondSlide.addEventListener("click", function (evt){
- // const imageSecond = document.createElement("img")
- slideActive.src = "./png/i.png"
- // slideActive = imageSecond
+secondSlide.addEventListener("click", function (evt) {
+
+  slideActive.src = "./png/i.png"
+
 })
 
-thierdSlide.addEventListener("click", function (evt){
-  // const imageThierd = document.createElement("img")
+thierdSlide.addEventListener("click", function (evt) {
+
   slideActive.src = "./png/tech.png"
-  // slideActive = imageThierd
+
 })

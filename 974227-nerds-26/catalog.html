@@ -14,7 +14,6 @@
 <body class="inner-page">
   <header>
     <nav aria-label="меню" class="main-header container">
-
       <a class="logo-nerds" href="catalog.html">
         <img src="img/nerds-logo.svg" alt="логотип нердс" class="nerds-logo-svg">
       </a>
@@ -30,63 +29,26 @@
         <li>
           <a href="./bag.html" class="menu__item menu__item_cart"><span>корзина</span></a>
         </li>
-
       </ul>
     </nav>
   </header>
   <main>
-    <!-- <section class="catalog"> -->
     <div class="catalog-header">
-      <!-- <div class="container"> -->
-      <!-- <h1 class="visually-hidden">Выбор шаблонов</h1> -->
-
       <h1 class="page-title">Магазин готовых шаблонов</h1>
-      <!-- </div> -->
     </div>
-    <!-- <div class="container"> -->
     <div class="catalog-columns">
       <section class="catalog__filter">
-
-        <!-- <h2 class="visually-hidden">Фильтр</h2> -->
         <h2 class="filter-title filter-title-custom-cost">Стоимость:</h2>
         <form class="filter" method="GET" action="#">
-          
-          <!-- <div class="custom">
-                <div class="custom-relative">
-                  <div class="green-straight"></div>
-                </div>
-                <button class="custom-button custom-button-begin">
-                </button>
-                <button class="custom-button custom-button-end"></button>
-              </div> -->
-              <input type="range" id="custom-range" name="custom-range" min="0" max="20000">
+          <input type="range" id="custom-range" name="custom-range" min="0" max="20000">
           <fieldset>
-           
             <label for="from" class="filter-text-word">от</label>
             <input id="from" class="filter-text" type="text" name="from" value="0">
 
             <label for="to" class="filter-text-word">до</label>
             <input id="to" class="filter-text" type="text" name="to" value="15000">
-         
           </fieldset>
-          <!-- <fieldset class="filter-fieldset">
-            <legend class="filter-title">сетка:</legend>
-            <ul class="no-margin">
-              <li class="filter__item-li">
-                <input id="adaptiv" class="filter__item-radio visually-hidden" type="radio" name="grid" value="a1"
-                  checked>
-                <label for="adaptiv" class="filter__item">Адаптивная</label>
-              </li>
-              <li class="filter__item-li">
-                <input id="fixed" class="filter__item-radio visually-hidden" type="radio" name="grid" value="a2">
-                <label for="fixed" class="filter__item">Фиксированная</label>
-              </li>
-              <li class="filter__item-li">
-                <input id="rubber" class="filter__item-radio visually-hidden" type="radio" name="grid" value="a3">
-                <label for="rubber" class="filter__item">Резиновая</label>
-              </li>
-            </ul>
-          </fieldset> -->
+
           <fieldset class="filter-fieldset">
             <legend class="filter-title">особенности:</legend>
             <ul class="no-margin">
@@ -111,31 +73,25 @@
                 <label for="bag" class="filter__item">Корзина</label>
               </li>
             </ul>
-
           </fieldset>
-          
           <div class="filter-button all-button" type="submit" href="#">показать</div>
         </form>
       </section>
       <section class="catalog__products">
-        <!-- <section class="catalog__prise"> -->
-
         <section class="product-selection">
           <h3 class="filter-title filter-subtitle">сортировать:</h3>
           <ul class="catalog__filters">
-            <li class="catalog__filter-item chosen items-cost"><!-- <button class="all-button" tabindex="1"> -->по цене</li>
-            <li class="catalog__filter-item items-type"><!-- <button class="all-button" tabindex="2"> --> по типу</li>
-            <li class="catalog__filter-item items-name"><!-- <button class="all-button  " tabindex="3"> --> по названию</li>
+            <li class="catalog__filter-item chosen items-cost">по цене</li>
+            <li class="catalog__filter-item items-type">по типу</li>
+            <li class="catalog__filter-item items-name">по названию</li>
           </ul>
-          <div class='arrows-container'>
+          <!-- <div class='arrows-container'>
             <button type="button" class="arrow all-button chosen"><img src="img/icon-down-dir.svg" alt="стрелка вниз"
                 class="img-arrow"></button>
             <button type="button" class="arrow all-button"><img src="img/icon-up-dir.svg" alt="стрелка вверх"
                 class="img-arrow"></button>
-          </div>
+          </div> -->
         </section>
-        <!-- </section> -->
-        <!-- <section class="catalog__items"> -->
         <ul class="examples">
           <li class="for-examples-item item-sedona"><a href="#" class="picture-relative">
               <div class="two-img">
@@ -145,9 +101,7 @@
               <section class="information-block">
                 <h3 class="examples__item">sedona</h3>
                 <p class="examples__text">информационный сайт для туристов</p>
-              
                 <div class="examples__prise all-button">9900</div>
-              
               </section>
             </a></li>
           <li class="for-examples-item item-pink"><a href="#" class="picture-relative">
@@ -206,20 +160,14 @@
               </section>
             </a></li>
         </ul>
-        <!-- </section> -->
-        <!-- <section class="container"> -->
-        <ul class="pagination-list">
+        <!-- <ul class="pagination-list">
           <li class="pagination-item pagination-item-current"><a>1</a></li>
           <li class="pagination-item"><a href="#">2</a></li>
           <li class="pagination-item"><a href="#">3</a></li>
           <li class="pagination-item pagination-item-next"><a href="#">следующая</a></li>
-        </ul>
-        <!-- </section> -->
+        </ul> -->
       </section>
     </div>
-    <!-- </div> -->
-    <!-- </section> -->
-
     <section class="container map-container" id="contact-info">
       <h2 class="visually-hidden">контакты</h2>
       <img src="img/map.jpg" alt="карта" class="big-map">
@@ -232,10 +180,7 @@
         <button class="slider-button address-button all-button">напишите нам</button>
       </div>
     </section>
-
-
     <form action="https://nerds.ru" method="get" class="personal-data nerds-form">
-      <!-- <section class="nerds-form"> -->
       <div class="about-us__header">
         <h3 class="about-us__title">Напишите нам</h3>
         <button class="close-cross all-button" type="button"><img src="img/close-cross.svg" alt="cross"
@@ -256,10 +201,7 @@
         <textarea class="input-form input-form__textarea" id="user-text" placeholder="В свободной форме"
           name="text-mail"></textarea>
       </div>
-
-
       <button type="submit" class="slider-button all-button slider-button-form">отправить</button>
-      <!-- </section> -->
     </form>
   </main>
   <footer class="footer-main container">
@@ -276,9 +218,7 @@
       <p class="make-friends__subtitle">Скидка 10% для друзей из социальных сетей.</p>
     </div>
   </footer>
-
-
-
 </body>
 <script src="./js/catalogsJs.js"></script>
+
 </html>
